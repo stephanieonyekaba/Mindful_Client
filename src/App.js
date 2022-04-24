@@ -8,7 +8,11 @@ import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAl
 import Header from './components/shared/Header'
 import RequireAuth from './components/shared/RequireAuth'
 import Home from './components/Home'
-import IndexAffirmations from './components/affirmation/IndexAffirmations'
+
+import indexAffirmations from './components/affirmations/IndexAffirmations'
+import IndexYogas from './components/yoga/IndexYoga'
+
+
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
@@ -41,6 +45,7 @@ const App = () => {
 		})
 	}
 
+
 		return (
 			<Fragment>
 				<Header user={user} />
@@ -53,8 +58,15 @@ const App = () => {
 
 					<Route path='/affirmations' element={
 					<RequireAuth user={user}>
-						<IndexPictures msgAlert={msgAlert} user={user} />
+						<indexAffirmations msgAlert={msgAlert} user={user} />
 					</RequireAuth>
+					}/>	
+
+					{/* this is our yoga index page route */}
+					<Route path='/yoga_poses' element={
+					// <RequireAuth user={user}>
+						<IndexYogas msgAlert={msgAlert} user={user} />
+					// </RequireAuth>
 					}/>	
 
 					<Route path='/sign-in' element={

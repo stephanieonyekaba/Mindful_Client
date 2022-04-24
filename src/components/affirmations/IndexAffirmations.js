@@ -1,11 +1,11 @@
 import React, {useState, useEffect, useRef } from 'react'
-import {getAllAffirmations} from "../../api/affirmations"
+import {getAllAffirmations} from "../../api/affirmations_api"
 import {Link} from "react-router-dom"
 import { Card } from 'react-bootstrap'
 
 //This is the function that handles showing the afffirmation object
 
-const indexAffirmations = (props) => {
+const IndexAffirmations = (props) => {
     //this sets the original state for affirmations
     const [affirmations, setAffirmations] = useState(null)
     useEffect(() => {
@@ -44,9 +44,9 @@ const indexAffirmations = (props) => {
             return (
             <>
             <h2> MANTRA OF THE DAY</h2>
-            <div style={cardContainerLayout}>
+            {/* <div style={cardContainerLayout}>
                 {affirmations.Jsx}
-            </div>
+            </div> */}
             </>
         )    
     
