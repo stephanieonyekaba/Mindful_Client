@@ -30,11 +30,11 @@ const IndexYogas = (props) => {
             }
             //here we are saying if there are yoga poses in the object, map each on to a key and display it 
             if (yogas.length > 0) {
-                yogas.jsx = yogas.map(yogas => (
-                    <Card key={yogas.id} style={{ width: '30%' }} className="m-2">
-                    {/* <Card.Header>{affirmation.bird}</Card.Header> */}
+                yogas.Jsx = yogas.map(yogas => (
+                    <Card key={yogas.id} style={{width: '50%' }} className='m-2'>
                     <Card.Body>
-                        <p>{yogas.english_name}</p>
+                     <img src= {yogas.img_url} height="100"  />
+                     <span> {yogas.english_name}</span>
                     </Card.Body>
                 </Card>
                 ))
@@ -42,11 +42,16 @@ const IndexYogas = (props) => {
             } 
         
             return (
-            <>
+            <>           
+            <div className="container"> 
+            <h3>Yoga Poses</h3>
+            {/* <ul>
+                <li className="card">{yogas.Jsx}</li>
+            </ul> */}
 
-        <h2 className="myyogas">All Yoga Poses</h2>
-        
-       
+            {yogas.Jsx}
+        </div>
+    
 
             </>
         )    
