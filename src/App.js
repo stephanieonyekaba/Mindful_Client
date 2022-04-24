@@ -9,7 +9,7 @@ import Header from './components/shared/Header'
 import RequireAuth from './components/shared/RequireAuth'
 import Home from './components/Home'
 
-import indexAffirmations from './components/affirmations/IndexAffirmations'
+import IndexAffirmations from './components/affirmations/IndexAffirmations'
 import IndexYogas from './components/yoga/IndexYoga'
 
 
@@ -57,9 +57,9 @@ const App = () => {
 					}/>
 
 					<Route path='/affirmations' element={
-					<RequireAuth user={user}>
-						<indexAffirmations msgAlert={msgAlert} user={user} />
-					</RequireAuth>
+					// <RequireAuth user={user}>
+						<IndexAffirmations msgAlert={msgAlert} user={user} />
+					// </RequireAuth>
 					}/>	
 
 					{/* this is our yoga index page route */}

@@ -3,5 +3,5 @@ import axios from 'axios'
 
 //index function 
 export const getAllAffirmations = () => {
-    return axios('{apiUrl/affirmations')
+    return axios(`${apiUrl}/affirmations`)
 }

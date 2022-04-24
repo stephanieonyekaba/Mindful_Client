@@ -1,8 +1,7 @@
 import React, {useState, useEffect, useRef } from 'react'
 import {getAllAffirmations} from "../../api/affirmations_api"
 import {Link} from "react-router-dom"
-import { Card } from 'react-bootstrap'
-
+import { Container, Card } from 'react-bootstrap'
 //This is the function that handles showing the afffirmation object
 
 const IndexAffirmations = (props) => {
@@ -30,23 +29,25 @@ const IndexAffirmations = (props) => {
             }
             //here we are saying if there are affirmations in the object, map each on to a key and display it 
             if (affirmations.length > 0) {
-                affirmations.jsx = affirmations.map(affirmations => (
-                    <Card key={affirmations.id} style={{ width: '30%' }} className="m-2">
-                    {/* <Card.Header>{affirmation.bird}</Card.Header> */}
+                affirmations.Jsx = affirmations.map(affirmations => (
+                    <Card key={affirmations.id} style={{width: '30%' }} className='m-2'>
                     <Card.Body>
-                        <p>{affirmations}</p>
+                     {affirmations.mantra} 
                     </Card.Body>
                 </Card>
                 ))
+                console.log('this is the AFF returned n ', affirmations.Jsx)
 
             } 
         
             return (
             <>
-            <h2> MANTRA OF THE DAY</h2>
-            {/* <div style={cardContainerLayout}>
-                {affirmations.Jsx}
-            </div> */}
+            <div className="container"> 
+                    <h3>Affirmation of The Day</h3>
+                    <ul>
+                        <li className="card">{affirmations.Jsx}</li>
+                    </ul>
+                </div>
             </>
         )    
     
