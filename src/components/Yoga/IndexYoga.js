@@ -33,7 +33,7 @@ const IndexYogas = (props) => {
                 yogas.Jsx = yogas.map(yogas => (
                     <Card key={yogas.id} style={{width: '50%' }} className='m-2'>
                     <Card.Body>
-                     <img src= {yogas.img_url} height="100"  />
+                    <Link to={`./${yogas._id}`}><img src= {yogas.img_url} height="100"  /></Link>
                      <span> {yogas.english_name}</span>
                     </Card.Body>
                 </Card>

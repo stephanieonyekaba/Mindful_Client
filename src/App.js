@@ -11,7 +11,7 @@ import Home from './components/Home'
 
 import IndexAffirmations from './components/affirmations/IndexAffirmations'
 import IndexYogas from './components/yoga/IndexYoga'
-
+import ShowYogas from './components/yoga/ShowYoga'
 
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
@@ -62,12 +62,21 @@ const App = () => {
 					// </RequireAuth>
 					}/>	
 
-					{/* this is our yoga index page route */}
+					{/* this is our YOGA INDEX page route */}
 					<Route path='/yoga_poses' element={
 					// <RequireAuth user={user}>
 						<IndexYogas msgAlert={msgAlert} user={user} />
 					// </RequireAuth>
 					}/>	
+
+					{/* this is our YOGA SHOW page route */}
+					<Route path='/yoga_poses/:id' element={
+					// <RequireAuth user={user}>
+						<IndexYogas msgAlert={msgAlert} user={user} />
+					// </RequireAuth>
+					}/>	
+
+
 
 					<Route path='/sign-in' element={
 					<SignIn msgAlert={msgAlert} setUser={setUser} />
