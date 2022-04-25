@@ -14,6 +14,7 @@ import IndexAffirmations from './components/affirmations/IndexAffirmations'
 import IndexYogas from './components/yoga/IndexYoga'
 import ShowYogas from './components/yoga/ShowYoga'
 import IndexJournals from './components/journal/IndexJournal'
+import ShowJournals from './components/journal/ShowJournal'
 
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
@@ -83,6 +84,13 @@ const App = () => {
 					<Route path='/my_journal' element={
 					// <RequireAuth user={user}>
 						<IndexJournals msgAlert={msgAlert} user={user} />
+					// </RequireAuth>
+					}/>	
+
+					{/* this is our JOURNAL SHOW page route */}
+					<Route path='/my_journal/:id' element={
+					// <RequireAuth user={user}>
+						<ShowJournals msgAlert={msgAlert} user={user} />
 					// </RequireAuth>
 					}/>	
 
