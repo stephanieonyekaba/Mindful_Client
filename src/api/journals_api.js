@@ -21,14 +21,14 @@ export const createJournal = (user, newJournal) => {
         headers: {
             Authorization: `Token token=${user.token}`
         },
-        data: { journal: newJournalt }
+        data: { journal: newJournal }
     })
 }
 
 // PATCH -> update function
 export const updateJournal = (user, updatedJournal) => {
     console.log('user', user)
-    console.log('this is newJournal', updatedPet)
+    console.log('this is newJournal', updatedJournal)
     return axios({
         url: `${apiUrl}/journals/${updatedJournal.id}`,
         method: 'PATCH',

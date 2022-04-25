@@ -32,7 +32,7 @@ const IndexJournals = (props) => {
             })
             .catch(() => {
                 msgAlert({
-                    heading: 'No pets?!!',
+                    heading: 'No journals?!!',
                     message: indexJournalsFailure,
                     variant: 'danger',
                 })
@@ -57,8 +57,9 @@ const IndexJournals = (props) => {
             // one method of styling, usually reserved for a single style
             // we can use inline, just like in html
             <Card key={journal.id} style={{ width: '30%' }} className="m-2">
-                <Card.Header>{journal.fullTitle}</Card.Header>
+                <Card.Header>{journal.date}</Card.Header>
                 <Card.Body>
+                    <p>{journal.entry}</p>
                     <Card.Text>
                         <Link to={`/journals/${journal.id}`}>View {journal.name}</Link>
                     </Card.Text>
