@@ -39,8 +39,11 @@ const ShowYogas = (props) => {
 
         <>
             <Container className="m-5">
-                <p className="pic-title">"{yoga.english_name}"</p>
+                <h1> <p className="pic-title">{yoga.english_name}</p></h1>
                 <Image src={yoga.img_url} className="img-fluid shadow-4"/><br/>
+                
+                <span> Sanskirt: {yoga.sanskrit_name}</span>
+                <p>{yoga.pose_benefits}</p>
 
 
                

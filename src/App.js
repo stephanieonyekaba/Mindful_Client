@@ -72,7 +72,7 @@ const App = () => {
 					{/* this is our YOGA SHOW page route */}
 					<Route path='/yoga_poses/:id' element={
 					// <RequireAuth user={user}>
-						<IndexYogas msgAlert={msgAlert} user={user} />
+						<ShowYogas msgAlert={msgAlert} user={user} />
 					// </RequireAuth>
 					}/>	
 
