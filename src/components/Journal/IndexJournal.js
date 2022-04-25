@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { getAllPets } from '../../api/pets'
+import { getAllJournals } from '../../api/journals_api'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import {indexPetsSuccess, indexPetsFailure} from '../shared/AutoDismissAlert/messages'
+import {indexJournalsSuccess, indexJournalsFailure} from '../shared/AutoDismissAlert/messages'
 
 // I'm going to declare a style object
 // this will be used to corral my cards
@@ -13,54 +13,54 @@ const cardContainerLayout = {
     flexFlow: 'row wrap'
 }
 
-const IndexPets = (props) => {
-    const [pets, setPets] = useState(null)
+const IndexJournals = (props) => {
+    const [journals, setJournals] = useState(null)
 
     const {user, msgAlert} = props
 
     useEffect(() => {
-        getAllPets()
+        getAllJournals()
             .then(res => {
-                setPets(res.data.pets)
+                setJournals(res.data.journals)
             })
             .then(() => {
                 msgAlert({
-                    heading: 'Found some pets!',
-                    message: indexPetsSuccess,
+                    heading: 'Found some journals!',
+                    message: indexJournalsSuccess,
                     variant: 'success',
                 })
             })
             .catch(() => {
                 msgAlert({
                     heading: 'No pets?!!',
-                    message: indexPetsFailure,
+                    message: indexJournalsFailure,
                     variant: 'danger',
                 })
             })
     }, [])
 
-    if (!pets) {
+    if (!journals) {
         return <p>loading...</p>
-    } else if (pets.length === 0) {
-        return <p>no pets yet, go add some</p>
+    } else if (journals.length === 0) {
+        return <p>no journal entries yet, please add some</p>
     }
 
-    let petCards
+    let journalCards
 
-    if (pets.length > 0) {
-        // petsJsx = pets.map(pet => (
-        //     <li key={pet.id}>
-        //         {pet.fullTitle}
+    if (journals.length > 0) {
+        // journalsJsx = journals.map(journal => (
+        //     <li key={journals.id}>
+        //         {journal.fullTitle}
         //     </li>
         // ))
-        petCards = pets.map(pet => (
+        journalCards = journals.map(journal => (
             // one method of styling, usually reserved for a single style
             // we can use inline, just like in html
-            <Card key={pet.id} style={{ width: '30%' }} className="m-2">
-                <Card.Header>{pet.fullTitle}</Card.Header>
+            <Card key={journal.id} style={{ width: '30%' }} className="m-2">
+                <Card.Header>{journal.fullTitle}</Card.Header>
                 <Card.Body>
                     <Card.Text>
-                        <Link to={`/pets/${pet.id}`}>View {pet.name}</Link>
+                        <Link to={`/journals/${journal.id}`}>View {journal.name}</Link>
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -69,12 +69,12 @@ const IndexPets = (props) => {
 
     return (
         <>
-            <h3>All the pets</h3>
+            <h1>My Journal Entries</h1>
             <div style={cardContainerLayout}>
-                {petCards}
+                {journalCards}
             </div>
         </>
     )
 }
 
-export default IndexPets
+export default IndexJournals
