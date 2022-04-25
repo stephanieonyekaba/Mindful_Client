@@ -30,9 +30,11 @@ const IndexAffirmations = (props) => {
             //here we are saying if there are affirmations in the object, map each on to a key and display it 
             if (affirmations.length > 0) {
                 affirmations.Jsx = affirmations.map(affirmations => (
+   
                     <Card key={affirmations.id} style={{width: '30%' }} className='m-2'>
                     <Card.Body>
                      {affirmations.mantra} 
+                    
                     </Card.Body>
                 </Card>
                 ))
@@ -43,9 +45,9 @@ const IndexAffirmations = (props) => {
             return (
             <>
             <div className="container"> 
-                    <h3>Affirmation of The Day</h3>
+                    <h1>Affirmation of The Day</h1>
                     <ul>
-                        <li className="card">{affirmations.Jsx}</li>
+                        <li className="card">{affirmations.Jsx} </li>
                     </ul>
                 </div>
             </>

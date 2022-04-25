@@ -44,7 +44,7 @@ const IndexYogas = (props) => {
             return (
             <>           
             <div className="container"> 
-            <h3>Yoga Poses</h3>
+            <h1>Yoga Poses</h1>
             {/* <ul>
                 <li className="card">{yogas.Jsx}</li>
             </ul> */}
