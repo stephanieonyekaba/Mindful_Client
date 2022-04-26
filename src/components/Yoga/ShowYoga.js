@@ -20,7 +20,7 @@ const ShowYogas = (props) => {
         }, [id])
 
 
-
+        console.log('this is showyogas', yoga)
     if (!yoga) {
         return (
             <h1>Loading....</h1>
@@ -34,7 +34,7 @@ const ShowYogas = (props) => {
         <strong>{yoga.img_url}</strong></p>
     )}
 
-
+    console.log('this is showyogas', yoga.sanskrit_name)
     return (
 
         <>

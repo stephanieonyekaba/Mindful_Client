@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { getOneJournal, updatedJournal, removeJournal } from '../../api/journals_api'
+import { getOneJournal, updateJournal, removeJournal } from '../../api/journals_api'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Spinner, Container, Card, Button } from 'react-bootstrap'
 import {showJournalSuccess, showJournalFailure} from '../shared/AutoDismissAlert/messages'
@@ -13,10 +13,8 @@ const cardContainerLayout = {
 }
 
 const ShowJournal = (props) => {
-
     const [journal, setJournal] = useState(null)
     const [modalOpen, setModalOpen] = useState(false)
-    const [toyModalOpen, setToyModalOpen] = useState(false)
     const [updated, setUpdated] = useState(false)
     const {user, msgAlert} = props
     const { id } = useParams()
@@ -61,7 +59,7 @@ const ShowJournal = (props) => {
             })
     }
 
-=
+
 
     if (!journal) {
         return (
@@ -100,7 +98,7 @@ const ShowJournal = (props) => {
                 </Card>
             </Container>
             <Container style={cardContainerLayout}>
-                {toyCards}
+
             </Container>
             <EditJournalModal 
                 journal={journal}
@@ -111,14 +109,7 @@ const ShowJournal = (props) => {
                 updatedJournal={updatedJournal}
                 handleClose={() => setModalOpen(false)}
             />
-            <GiveToyModal
-                journal={journal}
-                show={toyModalOpen}
-                user={user}
-                msgAlert={msgAlert}
-                triggerRefresh={() => setUpdated(prev => !prev)}
-                handleClose={() => setToyModalOpen(false)}
-            />
+
         </>
     )
 }
