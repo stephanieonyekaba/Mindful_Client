@@ -36,7 +36,7 @@ const alwaysOptions = (
 	<>
 		<Nav.Link>
 			<Link to='/' style={linkStyle}>
-				Home
+				Y
 			</Link>
 		</Nav.Link>
 	</>
@@ -46,7 +46,7 @@ const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
-                react-auth-template
+                Mindful 
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -57,6 +57,10 @@ const Header = ({ user }) => (
 				)}
 				{alwaysOptions}
 				{user ? authenticatedOptions : unauthenticatedOptions}
+
+				<Link to='/yoga_poses' style={linkStyle}>
+                Yoga  
+            </Link>
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>

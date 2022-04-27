@@ -58,40 +58,40 @@ const App = () => {
 					<Route path='/sign-up' element={
 					<SignUp msgAlert={msgAlert} setUser={setUser} />
 					}/>
-
+					{/* this is our AFFIRMATION INDEX page route */}
 					<Route path='/affirmations' element={
-					// <RequireAuth user={user}>
+					<RequireAuth user={user}>
 						<IndexAffirmations msgAlert={msgAlert} user={user} />
-					// </RequireAuth>
+					</RequireAuth>
 					}/>	
 
 					{/* this is our YOGA INDEX page route */}
 					<Route path='/yoga_poses' element={
-					// <RequireAuth user={user}>
+					<RequireAuth user={user}>
 						<IndexYogas msgAlert={msgAlert} user={user} />
-					// </RequireAuth>
+					</RequireAuth>
 					}/>	
 
 					{/* this is our YOGA SHOW page route */}
 					<Route path='/yoga_poses/:id' element={
-					// <RequireAuth user={user}>
+					<RequireAuth user={user}>
 						<ShowYogas msgAlert={msgAlert} user={user} />
-					// </RequireAuth>
+					</RequireAuth>
 					}/>	
 
 
 					{/* this is our JOURNAL INDEX page route */}
 					<Route path='/my_journal' element={
-					// <RequireAuth user={user}>
+					<RequireAuth user={user}>
 						<IndexJournals msgAlert={msgAlert} user={user} />
-					// </RequireAuth>
+					</RequireAuth>
 					}/>	
 
 					{/* this is our JOURNAL SHOW page route */}
 					<Route path='/my_journal/:id' element={
-					// <RequireAuth user={user}>
+					<RequireAuth user={user}>
 						<ShowJournals msgAlert={msgAlert} user={user} />
-					// </RequireAuth>
+					</RequireAuth>
 					}/>	
 
 

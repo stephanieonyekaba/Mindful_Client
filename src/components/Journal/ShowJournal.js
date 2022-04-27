@@ -13,7 +13,7 @@ const cardContainerLayout = {
 }
 
 const ShowJournal = (props) => {
-    const [journal, setJournal] = useState(null)
+    const [journal, setJournal] = useState({})
     const [modalOpen, setModalOpen] = useState(false)
     const [updated, setUpdated] = useState(false)
     const {user, msgAlert} = props
@@ -78,11 +78,8 @@ const ShowJournal = (props) => {
                     <Card.Header>{journal.date}</Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <small>Age: {journal.age}</small><br/>
-                            <small>Type: {journal.type}</small><br/>
-                            <small>
-                                Adoptable: {journal.adoptable ? 'yes' : 'no'}
-                            </small>
+                            <small>Entry: {journal.entry}</small><br/>
+
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
@@ -102,11 +99,12 @@ const ShowJournal = (props) => {
             </Container>
             <EditJournalModal 
                 journal={journal}
+                setJournal={setJournal}
                 show={modalOpen}
                 user={user}
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
-                updatedJournal={updatedJournal}
+                updateJournal={updateJournal}
                 handleClose={() => setModalOpen(false)}
             />
 

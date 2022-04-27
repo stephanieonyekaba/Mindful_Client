@@ -3,6 +3,7 @@ import {getAllYogas} from "../../api/yoga_api"
 import {Link} from "react-router-dom"
 import { Card } from 'react-bootstrap'
 
+
 //This is the function that handles showing the yoga object
 
 const IndexYogas = (props) => {
@@ -31,7 +32,7 @@ const IndexYogas = (props) => {
             //here we are saying if there are yoga poses in the object, map each on to a key and display it 
             if (yogas.length > 0) {
                 yogas.Jsx = yogas.map(yogas => (
-                    <Card key={yogas.id} style={{width: '50%' }} className='m-2'>
+                    <Card key={yogas.id} style={{width: '50%' }} className='m-2' >
                     <Card.Body>
                     <Link to={`./${yogas._id}`}><img src= {yogas.img_url} height="100"  /></Link>
                      <span> {yogas.english_name}</span>

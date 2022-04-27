@@ -61,7 +61,7 @@ const IndexJournals = (props) => {
                 <Card.Body>
                     <p>{journal.entry}</p>
                     <Card.Text>
-                        <Link to={`/journals/${journal.id}`}>View {journal.name}</Link>
+                        <Link to={`/my_journal/${journal._id}`}>View Entry</Link>
                     </Card.Text>
                 </Card.Body>
             </Card>

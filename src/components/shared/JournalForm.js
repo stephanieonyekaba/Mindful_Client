@@ -16,13 +16,13 @@ const JournalForm = (props) => {
                     name='entry'
                     onChange={handleChange}
                 />
-                <Form.Label>Date</Form.Label>
+                {/* <Form.Label>Date</Form.Label>
                 <Form.Control 
                     placeholder="MM/DD/YYYY"
                     value={journal.date}
                     name='date'
                     onChange={handleChange}
-                />
+                /> */}
                 
                 
                 <Button type='submit'>Submit</Button>

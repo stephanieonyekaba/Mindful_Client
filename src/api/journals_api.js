@@ -26,7 +26,7 @@ export const createJournal = (user, newJournal) => {
 }
 
 // PATCH -> update function
-export const updateJournal = (user, updatedJournal) => {
+export const updateJournal = ( user, updatedJournal) => {
     console.log('user', user)
     console.log('this is newJournal', updatedJournal)
     return axios({
