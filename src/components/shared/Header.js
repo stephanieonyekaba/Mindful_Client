@@ -17,6 +17,22 @@ const authenticatedOptions = (
 			<Link to='sign-out' style={linkStyle}>
 				Sign Out
 			</Link>
+
+			<Link to='/' style={linkStyle}>
+                Home  
+            </Link>
+
+			<Link to='/yoga_poses' style={linkStyle}>
+                Yoga  
+            </Link>
+
+			<Link to='/affirmations' style={linkStyle}>
+                Daily Affirmation  
+            </Link>
+
+			<Link to='/my_journal' style={linkStyle}>
+                Journal  
+            </Link>
 		</Nav.Item>
 	</>
 )
@@ -32,38 +48,36 @@ const unauthenticatedOptions = (
 	</>
 )
 
-const alwaysOptions = (
-	<>
-		<Nav.Link>
-			<Link to='/' style={linkStyle}>
-				Y
-			</Link>
-		</Nav.Link>
-	</>
-)
+// const alwaysOptions = (
+// 	<>
+// 		<Nav.Link>
+// 			<Link to='/' style={linkStyle}>
+				
+// 			</Link>
+// 		</Nav.Link>
+// 	</>
+// )
 
 const Header = ({ user }) => (
-	<Navbar bg='primary' variant='dark' expand='md'>
-		<Navbar.Brand>
-            <Link to='/' style={linkStyle}>
-                Mindful 
-            </Link>
-        </Navbar.Brand>
-		<Navbar.Toggle aria-controls='basic-navbar-nav' />
-		<Navbar.Collapse id='basic-navbar-nav'>
-			<Nav className='ml-auto'>
-				{user && (
-					<span className='navbar-text mr-2'>Welcome, {user.email}</span>
-				)}
-				{alwaysOptions}
-				{user ? authenticatedOptions : unauthenticatedOptions}
 
-				<Link to='/yoga_poses' style={linkStyle}>
-                Yoga  
-            </Link>
-			</Nav>
-		</Navbar.Collapse>
-	</Navbar>
+
+
+	// <Navbar bg='primary' variant='dark' expand='md'>
+	// 	<Navbar.Brand>
+    //             Mindful 
+    //     </Navbar.Brand>
+	// 	<Navbar.Toggle aria-controls='basic-navbar-nav' />
+	// 	<Navbar.Collapse id='basic-navbar-nav'>
+	// 		<Nav className='ml-auto'>
+	// 			{user && (
+	// 				<span className='navbar-text mr-2'>Welcome, {user.email}</span>
+	// 			)}
+	// 			{/* {alwaysOptions} */}
+	// 			{user ? authenticatedOptions : unauthenticatedOptions}
+
+	// 		</Nav>
+	// 	</Navbar.Collapse>
+	// </Navbar>
 )
 
 export default Header
