@@ -41,7 +41,7 @@ const ShowJournal = (props) => {
     }, [updated])
 
     const removeTheJournal = () => {
-        removeJournal(user, journal.id)
+        removeJournal(user, journal._id)
             .then(() => {
                 msgAlert({
                     heading: 'journal politely removed!',
