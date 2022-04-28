@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Form, Container, Button } from 'react-bootstrap'
+// import { Form, Container, Button } from 'react-bootstrap'
 import { createJournal } from '../../api/journals_api'
 import {createJournalSuccess, createJournalFailure} from '../shared/AutoDismissAlert/messages'
 import { useNavigate } from 'react-router-dom'
-import journalForm from '../shared/JournalForm'
 import JournalForm from '../shared/JournalForm'
+import {Modal, Container, Form, Button} from 'react-bootstrap'
 
 // create journal renders a form and calls createJournal function
 // maybe redirect(navigate) to the new journal show page
@@ -48,7 +48,7 @@ const CreateJournal = (props) => {
 
         createJournal(user, journal)
             // if create is successful, we should navigate to the show page
-            .then(res => {navigate(`/my_journal/${res.data.journal.id}`)})
+            .then(res => {navigate(`/my_journal/${res.data.journal._id}`)})
             // then we send a success message
             .then(() =>
                 msgAlert({
@@ -67,12 +67,54 @@ const CreateJournal = (props) => {
     }
 
     return (
-        <JournalForm 
-            journal={journal}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            heading="Add new Journal!"
-        />
+        //NO LONGER USING FORM COMPONENT TO MATCH CRISTOS EDITJOURNAL
+        // <JournalForm 
+        //     journal={journal}
+        //     handleChange={handleChange}
+        //     handleSubmit={handleSubmit}
+        //     heading="Add new Journal!"
+        // />
+
+
+
+            <Container className="justify-content-center">
+            <h3>CREATE A NEW JOURNAL</h3>
+            <Form onSubmit={handleSubmit}>
+                <Form.Label>WW</Form.Label>
+                <Form.Control 
+                    placeholder="My journal entry"
+                    value={journal.entry}
+                    name='entry'
+                    onChange={handleChange}
+                    />
+                <Form.Label>Date</Form.Label>
+                <Form.Control 
+                    placeholder="MM/DD/YYYY"
+                    value={journal.date}
+                    name='date'
+                    type="date"
+                    onChange={handleChange}
+                />
+                
+                
+                <Button type='submit'>Submit</Button>
+            </Form>
+        </Container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
     )
 }
 

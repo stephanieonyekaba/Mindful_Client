@@ -71,6 +71,7 @@ const IndexJournals = (props) => {
     return (
         <>
             <h1>My Journal Entries</h1>
+            <Link to="/add_journal">Add Entry</Link>
             <div style={cardContainerLayout}>
                 {journalCards}
             </div>

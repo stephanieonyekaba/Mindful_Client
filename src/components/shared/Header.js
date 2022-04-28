@@ -4,7 +4,9 @@ import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 const linkStyle = {
     color: 'gray',
-    textDecoration: 'none'
+    textDecoration: 'none',
+	padding: '20px'
+	
 }
 const authenticatedOptions = (
 	<>

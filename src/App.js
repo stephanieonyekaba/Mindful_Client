@@ -99,7 +99,7 @@ const App = () => {
 					{/* this is our JOURNAL CREATE page route */}
 					<Route path='/add_journal' element={
 					<RequireAuth user={user}>
-						<ShowJournals msgAlert={msgAlert} user={user} />
+						<CreateJournal msgAlert={msgAlert} user={user} />
 					</RequireAuth>
 					}/>	
 
