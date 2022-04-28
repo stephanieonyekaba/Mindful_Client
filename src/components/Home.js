@@ -7,8 +7,9 @@ const Home = (props) => {
 	return (
 		<>
 
-<Container>
+	<Container>
 			<h1>Home Page</h1>
+	<Container> </Container>
 
 </Container>
 

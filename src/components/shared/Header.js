@@ -67,12 +67,12 @@ const Header = ({ user }) => (
 	<Navbar.Brand href="#home">
         <img
           alt=""
-          src="/logo.svg"
-          width="30"
-          height="30"
+          src="https://i.ibb.co/PwBpD2y/MINDFUL-LOGO.png "
+          width="70"
+          height="70"
           className="d-inline-block align-top"
         />{' '}
-      React Bootstrap
+      Mindful
       </Navbar.Brand>
 
 
@@ -97,3 +97,7 @@ const Header = ({ user }) => (
 )
 
 export default Header
+
+
+
+
