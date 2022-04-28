@@ -21,26 +21,76 @@ const CreateJournal = (props) => {
     // we'll need handleChange and handleSubmit funcs
     const handleChange = (e) => {
         // e === event
-        e.persist()
-
-        setJournal(prevJournal => {
-            const entry = e.target.entry
-            let value = e.target.value
-            console.log('etarget type', e.target.type)
+        e.persist(
+        )
+        setJournal( {...journal, [ e.target.name]: e.target.value})
 
 
-            if (e.target.type === 'number') {
-                value = parseInt(e.target.value)
-            }
+        // setJournal(prevJournal => {
+        //     const entry = e.target.entry
+        //     const date = e.target.date
 
-            const updatedValue = { entry: value }
+        //     let value = e.target.value
+        //     console.log('etarget type', e.target.type)
 
-            console.log('prevJournal', prevJournal)
-            console.log('updatedValue', updatedValue)
 
-            return {...prevJournal, ...updatedValue}
-        })
+            // if (e.target.type === 'number') {
+            //     value = parseInt(e.target.value)
+            // }
+            // if (e.target.type === 'string') {
+            //     value = e.target.value
+            // }
+            // if (e.target.name == 'date') {
+            //     value = e.target.value
+            //     const updatedDate = {date: value}
+            // }
+
+            // const updatedValue = { entry: value }
+
+            // console.log('prevJournal', prevJournal)
+            // console.log('updatedValue', updatedValue)
+
+            // return {updatedValue}
+        // })
+        
+
+
+
+        // setJournal(prevJournal => {
+        //     const date = e.target.date
+        //     let value = e.target.value
+        //     console.log('etarget type', e.target.type)
+
+
+        //     if (e.target.type === 'number') {
+        //         value = parseInt(e.target.value)
+        //     }
+        //     if (e.target.type == 'date') {
+        //         value = e.target.value
+        //     }
+
+        //     const updatedDate = { date: value }
+
+        //     return {...prevJournal}
+        // })
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
+
+
+    
 
     const handleSubmit = (e) => {
         // e === event
@@ -48,7 +98,7 @@ const CreateJournal = (props) => {
 
         createJournal(user, journal)
             // if create is successful, we should navigate to the show page
-            .then(res => {navigate(`/my_journal/${res.data.journal._id}`)})
+            .then(res => {navigate("/my_journal")})
             // then we send a success message
             .then(() =>
                 msgAlert({
@@ -80,7 +130,7 @@ const CreateJournal = (props) => {
             <Container className="justify-content-center">
             <h3>CREATE A NEW JOURNAL</h3>
             <Form onSubmit={handleSubmit}>
-                <Form.Label>WW</Form.Label>
+                <Form.Label>Entry</Form.Label>
                 <Form.Control 
                     placeholder="My journal entry"
                     value={journal.entry}
