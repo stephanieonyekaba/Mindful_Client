@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 const linkStyle = {
-    color: 'white',
+    color: 'gray',
     textDecoration: 'none'
 }
 const authenticatedOptions = (
@@ -61,23 +61,39 @@ const unauthenticatedOptions = (
 const Header = ({ user }) => (
 
 
+	
+	<Navbar bg='light' variant='light' expand='md'>
 
-	// <Navbar bg='primary' variant='dark' expand='md'>
-	// 	<Navbar.Brand>
-    //             Mindful 
-    //     </Navbar.Brand>
-	// 	<Navbar.Toggle aria-controls='basic-navbar-nav' />
-	// 	<Navbar.Collapse id='basic-navbar-nav'>
-	// 		<Nav className='ml-auto'>
-	// 			{user && (
-	// 				<span className='navbar-text mr-2'>Welcome, {user.email}</span>
-	// 			)}
-	// 			{/* {alwaysOptions} */}
-	// 			{user ? authenticatedOptions : unauthenticatedOptions}
+	<Navbar.Brand href="#home">
+        <img
+          alt=""
+          src="/logo.svg"
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+        />{' '}
+      React Bootstrap
+      </Navbar.Brand>
 
-	// 		</Nav>
-	// 	</Navbar.Collapse>
-	// </Navbar>
+
+
+
+
+		{/* <Navbar.Brand>
+                Mindful 
+        </Navbar.Brand> */}
+		<Navbar.Toggle aria-controls='basic-navbar-nav' />
+		<Navbar.Collapse id='basic-navbar-nav'>
+			<Nav className='ml-auto'>
+				{user && (
+					<span className='navbar-text mr-2'>Welcome, {user.email}</span>
+				)}
+				{/* {alwaysOptions} */}
+				{user ? authenticatedOptions : unauthenticatedOptions}
+
+			</Nav>
+		</Navbar.Collapse>
+	</Navbar>
 )
 
 export default Header

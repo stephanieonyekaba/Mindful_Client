@@ -1,35 +1,23 @@
-import React, { useState } from 'react'
-import {Modal} from 'react-bootstrap'
+import React, { useState, useEffect } from 'react'
+import {Modal, Container, Form, Button} from 'react-bootstrap'
 import JournalForm from '../shared/JournalForm'
+import { getOneJournal, updateJournal, removeJournal } from '../../api/journals_api'
 
 const EditJournalModal = (props) => {
-    const { user, show, handleClose, journal, setJournal, updateJournal, msgAlert, triggerRefresh } = props
-    // const [journal, setJournal] = useState(props.journal)
+    const { user, show, handleClose, journal, msgAlert, triggerRefresh } = props
+    const [journalEdit, setJournalEdit] = useState(null)
 
+
+   
+    
     const handleChange = (e) => {
         // e === event
         // e.persist()
-        console.log("THIS IS PROPS.JOURNAL", props.journal)
-        const updatedJournal = props.journal
+        console.log("THIS IS PROPS.JOURNAL", journal)
+        const updatedJournal = journal
         updatedJournal.entry = e.target.value
         console.log("THIS IS NEW JOURNAL.ENTRY", updatedJournal.entry  )
-        setJournal( (prevJournal) => {
-        prevJournal.entry = e.target.entry
-            // const entry = e.target.entry
-            // // const date = e.target.date
-            // let value = e.target.value
-            // console.log("THIS IS THE CONSOLE.LOG FOR FOR VALUE", value)
-
-            // const updatedValue = { entry: value }
-            // console.log('etarget type', e.target.type)
-            // console.log('updatedValue', updatedValue)
-            // // if (e.target.entry === 'string') {
-            // //     value = parseInt(e.target.value)
-            // // }
-            // return { updatedJournal}
-            return prevJournal
-
-        })
+        setJournalEdit(e.target.value)
     }
 
     const handleSubmit = (e) => {
@@ -37,7 +25,7 @@ const EditJournalModal = (props) => {
         e.preventDefault()
 
         console.log('the journal to submit', journal)
-        updateJournal(user, journal)
+        updateJournal(user, journal._id, journalEdit)
         // updateJournal(journal)
             // if create is successful, we should navigate to the show page
             .then(() => handleClose())
@@ -59,19 +47,49 @@ const EditJournalModal = (props) => {
         console.log('this is the journal', journal)
     }
 
+
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body>
-                <JournalForm 
-                    journal={journal}
-                    handleChange={handleChange}
-                    handleSubmit={handleSubmit}
-                    heading="Edit journal!"
-                />
+                
+
+        
+            <Container className="justify-content-center">
+            <h3>Edit this journal post</h3>
+            <Form onSubmit={handleSubmit}>
+                <Form.Label>Entry</Form.Label>
+                <Form.Control 
+                    placeholder="My journal entry"
+                    value={journal.entry}
+                    name='entry'
+                    onChange={handleChange}
+                    />
+                {/* <Form.Label>Date</Form.Label>
+                <Form.Control 
+                    placeholder="MM/DD/YYYY"
+                    value={journal.date}
+                    name='date'
+                    onChange={handleChange}
+                /> */}
+                
+                
+                <Button type='submit'>Submit</Button>
+            </Form>
+        </Container>
+
+
+
+
+
+
+
+
             </Modal.Body>
         </Modal>
-    )
+        )
+
 }
+
     
 export default EditJournalModal

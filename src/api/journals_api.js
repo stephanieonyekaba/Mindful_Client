@@ -26,24 +26,24 @@ export const createJournal = (user, newJournal) => {
 }
 
 // PATCH -> update function
-export const updateJournal = ( user, updatedJournal) => {
+export const updateJournal = ( user, journalID, updatedJournal) => {
     console.log('user', user)
     console.log('this is newJournal', updatedJournal)
     return axios({
-        url: `${apiUrl}/journals/${updatedJournal.id}`,
+        url: `${apiUrl}/journals/${journalID}`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${user.token}`
         },
-        data: { journal: updatedJournal }
+        data: { entry: updatedJournal }
     })
 }
 
 // DELETE -> remove function
-export const removeJournal = (user, journalId) => {
+export const removeJournal = (user, journalID) => {
     console.log('user', user)
     return axios({
-        url: `${apiUrl}/journals/${journalId}`,
+        url: `${apiUrl}/journals/${journalID}`,
         method: 'DELETE',
         headers: {
             Authorization: `Token token=${user.token}`

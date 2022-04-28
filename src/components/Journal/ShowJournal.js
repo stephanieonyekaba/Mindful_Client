@@ -99,12 +99,10 @@ const ShowJournal = (props) => {
             </Container>
             <EditJournalModal 
                 journal={journal}
-                setJournal={setJournal}
                 show={modalOpen}
                 user={user}
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
-                updateJournal={updateJournal}
                 handleClose={() => setModalOpen(false)}
             />
 
