@@ -3,9 +3,17 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 const linkStyle = {
-    color: 'gray',
-    textDecoration: 'none',
-	padding: '20px'
+	font: "Gelasio",
+    color: '#c4bda9',
+    textDecoration: 'italics',
+	margin: '30px'
+	
+	
+}
+
+const brandStyle = {
+	font: "Gelasio",
+    color: '#595751',
 	
 }
 const authenticatedOptions = (
@@ -25,6 +33,10 @@ const authenticatedOptions = (
 
 			<Link to='/affirmations' style={linkStyle}>
                 Daily Affirmation  
+            </Link>
+
+			<Link to='/my_favorites' style={linkStyle}>
+                Favorites  
             </Link>
 
 			<Link to='sign-out' style={linkStyle}>
@@ -67,14 +79,14 @@ const Header = ({ user }) => (
 	
 	<Navbar bg='light' variant='light' expand='md'>
 
-	<Navbar.Brand href="#home">
-        <img
+	<Navbar.Brand href="#home" style={brandStyle}>
+        {/* <img
           alt=""
           src="https://i.ibb.co/PwBpD2y/MINDFUL-LOGO.png "
           width="70"
           height="70"
           className="d-inline-block align-top"
-        />{' '}
+        />{' '} */}
       Mindful
       </Navbar.Brand>
 

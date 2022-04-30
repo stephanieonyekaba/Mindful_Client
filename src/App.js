@@ -16,7 +16,7 @@ import ShowYogas from './components/yoga/ShowYoga'
 import IndexJournals from './components/journal/IndexJournal'
 import ShowJournals from './components/journal/ShowJournal'
 import CreateJournal from './components/journal/CreateJournal'
-
+import IndexFavorites from './components/favorites/IndexFavorites'
 
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
@@ -100,6 +100,13 @@ const App = () => {
 					<Route path='/add_journal' element={
 					<RequireAuth user={user}>
 						<CreateJournal msgAlert={msgAlert} user={user} />
+					</RequireAuth>
+					}/>	
+
+					{/* this is our FAVORITES INDEX page route */}
+					<Route path='/my_favorites' element={
+					<RequireAuth user={user}>
+						<IndexFavorites msgAlert={msgAlert} user={user} />
 					</RequireAuth>
 					}/>	
 

@@ -3,6 +3,8 @@ import {getAllAffirmations} from "../../api/affirmations_api"
 import {Link} from "react-router-dom"
 import { Container, Card } from 'react-bootstrap'
 //This is the function that handles showing the afffirmation object
+import { StyledHeader } from '../styles/Header.styled'
+
 
 const IndexAffirmations = (props) => {
     //this sets the original state for affirmations
@@ -46,7 +48,7 @@ const IndexAffirmations = (props) => {
             return (
             <>
             <div className="container"> 
-                    <h1>Affirmation of The Day</h1>
+                   <StyledHeader>  <h1>Affirmation of The Day</h1></StyledHeader>
                     <ul>
                         <li className="card">{affirmations.Jsx [randomNumber]} </li>
                     </ul>

@@ -3,7 +3,7 @@ import { getOneYoga} from '../../api/yoga_api.js'
 import { useParams } from 'react-router-dom'
 import { Image, Button, Container } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-
+import {favoriteYoga} from '../../api/yoga_api.js'
 
 const ShowYogas = (props) => {
     const navigate = useNavigate()
@@ -19,7 +19,13 @@ const ShowYogas = (props) => {
             .catch(console.error)
         }, [id])
 
-
+    const handleClick = () => {
+        console.log("THIS IS THE PROPS.USER", props.user)
+        console.log("THIS Is The id", id)
+        favoriteYoga(props.user, id)
+            .then(res => console.log(res))
+            .catch(console.log("error"))
+    }
         console.log('this is showyogas', yoga)
     if (!yoga) {
         return (
@@ -44,6 +50,7 @@ const ShowYogas = (props) => {
                 
                 <span> Sanskirt: {yoga.sanskrit_name}</span>
                 <p>{yoga.pose_benefits}</p>
+                <Button variant="outline-primary" onClick={handleClick}>Add to Favorites</Button>{' '}
 
 
                

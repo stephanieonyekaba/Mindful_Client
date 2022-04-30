@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import {indexJournalsSuccess, indexJournalsFailure} from '../shared/AutoDismissAlert/messages'
 import Moment from 'react-moment';
 import 'moment-timezone';
-
+import { StyledHeader } from '../styles/Header.styled'
 
 // I'm going to declare a style object
 // this will be used to corral my cards
@@ -73,7 +73,7 @@ const IndexJournals = (props) => {
 
     return (
         <>
-            <h1>My Journal Entries</h1>
+           <StyledHeader><h1>My Journal Entries</h1> </StyledHeader> 
             <Link to="/add_journal">Add Entry</Link>
             <div style={cardContainerLayout}>
                 {journalCards}

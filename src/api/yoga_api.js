@@ -24,3 +24,18 @@ export const getAllYogas = () => {
 export const getOneYoga = (yogaId) => {
     return axios(`${apiUrl}/yogas/${yogaId}`)
 }
+
+
+export const favoriteYoga = (user, yogaId) => {
+    console.log('user', user)
+    return axios({
+        url: `${apiUrl}/yoga/favorites/${yogaId}`,
+        method: 'POST',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        },
+    })
+}
+
+
+

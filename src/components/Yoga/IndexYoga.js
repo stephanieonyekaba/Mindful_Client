@@ -2,10 +2,11 @@ import React, {useState, useEffect, useRef } from 'react'
 import {getAllYogas} from "../../api/yoga_api"
 import {Link} from "react-router-dom"
 import { Card } from 'react-bootstrap'
+import { StyledHeader } from '../styles/Header.styled'
+
 
 
 //This is the function that handles showing the yoga object
-
 const IndexYogas = (props) => {
     //this sets the original state for yoga poses
     const [yogas, setYogas] = useState(null)
@@ -45,7 +46,7 @@ const IndexYogas = (props) => {
             return (
             <>           
             <div className="container"> 
-            <h1>Yoga Poses</h1>
+           <StyledHeader>  <h1>Yoga Poses</h1> </StyledHeader>
             {/* <ul>
                 <li className="card">{yogas.Jsx}</li>
             </ul> */}
