@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import { getOneYoga} from '../../api/yoga_api.js'
+import { getOneYoga, favoriteYoga} from '../../api/yoga_api.js'
 import { useParams } from 'react-router-dom'
 import { Image, Button, Container } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import {favoriteYoga} from '../../api/yoga_api.js'
+// import {favoriteYoga} from '../../api/yoga_api.js'
 
 const ShowYogas = (props) => {
+    console.log('WHAT THE F IS THIS PROP', props)
     const navigate = useNavigate()
     const [yoga, setYoga] = useState(null)
     // console.log('props in showYogas', props)
@@ -61,5 +62,4 @@ const ShowYogas = (props) => {
     )
 }
 
-export default ShowYogas
-
+export default ShowYogas 

@@ -13,6 +13,14 @@ export const getAllYogas = () => {
 
 
 
+
+export const getAllFavoriteYogas = () => {
+    return axios(`${apiUrl}/favoriteYogas`)
+}
+
+
+
+
 //show function
 //Here we are creating a function that will be called in our show yoga page
 //this function allows us to access the data from our mindful-api 
@@ -32,10 +40,7 @@ export const favoriteYoga = (user, yogaId) => {
         url: `${apiUrl}/yoga/favorites/${yogaId}`,
         method: 'POST',
         headers: {
-            Authorization: `Token token=${user.token}`
+            // Authorization: `Token token=${user.token}`
         },
     })
 }
-
-
-
