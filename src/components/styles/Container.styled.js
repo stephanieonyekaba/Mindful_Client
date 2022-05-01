@@ -1,22 +1,26 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`   
-    width: 900px;
-    height: 500px;
-    max-width: 100%;
+ 
+    width: 100%;
+    height: 800px;
     padding: 0 20px;
     margin: 0 auto;
+    background-size: contain; 
+    /* background-repeat: no-repeat; */
     background-size: cover; 
-    background-color: blue;
-    background-image: url("https://i.ibb.co/LPsrQyj/mpge202e284-e6e6-46b6-979f-f638837bd33a.jpg");
+    background-color: gray;
+    background-image: url("https://i.ibb.co/sRkmwMk/pexels-photo-8266188.jpg ");
     text-align: center;
-
-    color: white;
+    image-rendering: -webkit-optimize-contrast;
     font-size: 75px;
     font-family: 'Lato', sans-serif;
+    color: white;
     font-weight: 300;
    
 `
+
+
 
 
 

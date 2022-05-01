@@ -1,3 +1,5 @@
+
+   
 import React, {useState, useEffect } from 'react'
 import {Link} from "react-router-dom"
 import { Container } from 'react-bootstrap'
@@ -36,16 +38,16 @@ const IndexFavorites = (props) => {
             //here we are saying if there are yoga poses in the object, map each on to a key and display it 
             if (favoriteYogas.length > 0) {
 
+				console.log("hey")
 
-
-                favoriteYogas.Jsx = favoriteYogas.map(favoriteYogas => (
-                    <Card key={favoriteYogas.id} style={{width: '50%' }} className='m-2' >
-                    <Card.Body>
+                // favoriteYogas.Jsx = favoriteYogas.map(favoriteYogas => (
+                //     <Card key={favoriteYogas.id} style={{width: '50%' }} className='m-2' >
+                //     <Card.Body>
                     
-                     <span> {favoriteYogas}</span>
-                    </Card.Body>
-                </Card>
-                ))
+                //      <span> {favoriteYogas}</span>
+                //     </Card.Body>
+                // </Card>
+                // ))
 
             } 
         
@@ -53,7 +55,7 @@ const IndexFavorites = (props) => {
             <>           
             <div className="container"> 
 
-            { favoriteYogas[0] }
+            { favoriteYogas }
         </div>
     
 

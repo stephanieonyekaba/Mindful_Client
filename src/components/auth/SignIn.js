@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import { signIn } from '../../api/auth'
 import messages from '../shared/AutoDismissAlert/messages'
 
+import { Container } from '../styles/Container.styled'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+
 
 const SignIn = (props) => {
 	// constructor(props) {
@@ -55,12 +57,14 @@ const SignIn = (props) => {
 	}
 
     return (
+        <> 
+        <Container> 
         <div className='row'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-                <h3>Sign In</h3>
+                <h1>Sign In</h1>
                 <Form onSubmit={onSignIn}>
                     <Form.Group controlId='email'>
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label></Form.Label>
                         <Form.Control
                             required
                             type='email'
@@ -71,7 +75,7 @@ const SignIn = (props) => {
                         />
                     </Form.Group>
                     <Form.Group controlId='password'>
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label></Form.Label>
                         <Form.Control
                             required
                             name='password'
@@ -87,6 +91,8 @@ const SignIn = (props) => {
                 </Form>
             </div>
         </div>
+        </Container> 
+        </>
     )
 }
 
