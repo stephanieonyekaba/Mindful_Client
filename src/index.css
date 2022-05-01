@@ -8,8 +8,14 @@ body {
 }
 
 h1 {
-  font-family: "Gelasio";
-  font-weight: bold;
+  font-family: "Raleway";
+  font-weight: 10;
 }
 
-
+#homeText {
+ 
+  font-family: "Raleway";
+  font-weight: 10;
+  color: white;
+  font-size: 20px;
+}

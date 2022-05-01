@@ -56,7 +56,7 @@ const App = () => {
 				<Header user={user} />
 				<Routes>
 
-					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+
 					<Route path='/sign-up' element={
 					<SignUp msgAlert={msgAlert} setUser={setUser} />
 					}/>
@@ -73,6 +73,13 @@ const App = () => {
 						<IndexYogas msgAlert={msgAlert} user={user} />
 					</RequireAuth>
 					}/>	
+
+					{/* this is our HOME INDEX page route */}
+					{/* <Route path='/home' element={
+					<RequireAuth user={user}>
+						<Home msgAlert={msgAlert} user={user} />
+					</RequireAuth>
+					}/>	 */}
 
 					{/* this is our YOGA SHOW page route */}
 					<Route path='/yoga_poses/:id' element={
@@ -111,10 +118,10 @@ const App = () => {
 					}/>	
 
 
-
-					<Route path='/sign-in' element={
+					<Route path='/' element={
 					<SignIn msgAlert={msgAlert} setUser={setUser} />
 					}/>
+					<Route path='/home' element={<Home msgAlert={msgAlert} user={user} />} /> 
 
 					<Route path='/sign-out' element={
 					<RequireAuth user={user}>
