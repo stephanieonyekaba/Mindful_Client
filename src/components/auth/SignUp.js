@@ -7,6 +7,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import { Container } from '../styles/Container.styled'
 
 const SignUp = (props) => {
 	// constructor(props) {
@@ -56,12 +57,14 @@ const SignUp = (props) => {
 
 
     return (
+        <>
+        <Container> 
         <div className='row'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-                <h3>Sign Up</h3>
+                <h1>Sign Up</h1>
                 <Form onSubmit={onSignUp}>
                     <Form.Group controlId='email'>
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label></Form.Label>
                         <Form.Control
                             required
                             type='email'
@@ -72,7 +75,7 @@ const SignUp = (props) => {
                         />
                     </Form.Group>
                     <Form.Group controlId='password'>
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label></Form.Label>
                         <Form.Control
                             required
                             name='password'
@@ -83,7 +86,7 @@ const SignUp = (props) => {
                         />
                     </Form.Group>
                     <Form.Group controlId='passwordConfirmation'>
-                        <Form.Label>Password Confirmation</Form.Label>
+                        <Form.Label></Form.Label>
                         <Form.Control
                             required
                             name='passwordConfirmation'
@@ -93,12 +96,14 @@ const SignUp = (props) => {
                             onChange={e => setPasswordConfirmation(e.target.value)}
                         />
                     </Form.Group>
-                    <Button variant='primary' type='submit'>
+                    <Button variant='light' type='submit'>
                         Submit
                     </Button>
                 </Form>
             </div>
         </div>
+        </Container> 
+        </>
     )
 
 }
