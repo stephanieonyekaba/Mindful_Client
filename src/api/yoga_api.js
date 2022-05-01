@@ -13,6 +13,7 @@ export const getAllYogas = () => {
 
 
 
+//this is the axios call to the backend to access the user favorite schema 
 
 export const getAllFavoriteYogas = () => {
     return axios(`${apiUrl}/favoriteYogas`)
