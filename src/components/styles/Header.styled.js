@@ -6,6 +6,7 @@ export const StyledHeader = styled.header`
     padding: 40px 0;
     color: #595751;
     font: "Lato";
+    font-size: 10px;
 
 `
 
