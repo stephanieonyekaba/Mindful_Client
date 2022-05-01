@@ -2,6 +2,8 @@ import Header from './shared/Header'
 import { Container } from './styles/Container.styled'
 import { Box } from './styles/Box.styled'
 import {Link} from "react-router-dom"
+
+
 const Home = (props) => {
 	// const { msgAlert, user } = props
 	console.log('props in home', props)

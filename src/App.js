@@ -122,6 +122,7 @@ const App = () => {
 					<SignIn msgAlert={msgAlert} setUser={setUser} />
 					}/>
 					<Route path='/home' element={<Home msgAlert={msgAlert} user={user} />} /> 
+				
 
 					<Route path='/sign-out' element={
 					<RequireAuth user={user}>

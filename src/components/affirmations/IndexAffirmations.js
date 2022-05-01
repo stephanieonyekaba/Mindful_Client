@@ -4,7 +4,8 @@ import {Link} from "react-router-dom"
 import { Container, Card } from 'react-bootstrap'
 //This is the function that handles showing the afffirmation object
 import { StyledHeader } from '../styles/Header.styled'
-
+import { AffirmationBox } from '../styles/AffirmationBox.styled'
+import { AffirmationBg } from '../styles/AffirmationBg.styled'
 
 const IndexAffirmations = (props) => {
     //this sets the original state for affirmations
@@ -34,7 +35,7 @@ const IndexAffirmations = (props) => {
             const randomNumber = Math.floor((Math.random() * 10) + 1)
             if (affirmations.length > 0) {
                 affirmations.Jsx = affirmations.map(affirmations => (
-                    <Card key={affirmations.id} style={{width: '30%' }} className='m-2'>
+                    <Card key={affirmations.id} style={{width: '100%' }} className='m-2'>
                     <Card.Body>
                      {affirmations.mantra} 
                     
@@ -47,12 +48,18 @@ const IndexAffirmations = (props) => {
         
             return (
             <>
+            <AffirmationBg> 
             <div className="container"> 
-                   <StyledHeader>  <h1>Affirmation of The Day</h1></StyledHeader>
-                    <ul>
-                        <li className="card">{affirmations.Jsx [randomNumber]} </li>
-                    </ul>
+                   <StyledHeader><h1>Affirmation of The Day</h1></StyledHeader>
+
+            <AffirmationBox> 
+                    
+                    {affirmations.Jsx [randomNumber]}
+                
+                </AffirmationBox>
                 </div>
+
+                </AffirmationBg>
             </>
         )    
     
