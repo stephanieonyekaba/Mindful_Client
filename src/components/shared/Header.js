@@ -19,7 +19,7 @@ const brandStyle = {
 const authenticatedOptions = (
 	<>
 		<Nav.Item>
-			<Link to='/' style={linkStyle}>
+			<Link to='/home' style={linkStyle}>
                 Home  
             </Link>
 			<Link to='/my_journal' style={linkStyle}>
@@ -43,6 +43,11 @@ const authenticatedOptions = (
 				Sign Out
 			</Link>
 		</Nav.Item>
+		<Nav.Item>
+			<Link to='change-password' style={linkStyle}>
+				Change password
+			</Link>
+		</Nav.Item>
 
 	</>
 )
@@ -53,13 +58,8 @@ const unauthenticatedOptions = (
 		    <Link to='sign-up' style={linkStyle}>Sign Up</Link>
         </Nav.Item>
         <Nav.Item>
-		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
+		    <Link to='/' style={linkStyle}>Sign In</Link>
         </Nav.Item>
-		<Nav.Item>
-			<Link to='change-password' style={linkStyle}>
-				Change Password
-			</Link>
-		</Nav.Item>
 	</>
 )
 
@@ -79,14 +79,8 @@ const Header = ({ user }) => (
 	
 	<Navbar bg='light' variant='light' expand='md'>
 
-	<Navbar.Brand href="#home" style={brandStyle}>
-        {/* <img
-          alt=""
-          src="https://i.ibb.co/PwBpD2y/MINDFUL-LOGO.png "
-          width="70"
-          height="70"
-          className="d-inline-block align-top"
-        />{' '} */}
+	<Navbar.Brand style={brandStyle}>
+
       Mindful
       </Navbar.Brand>
 

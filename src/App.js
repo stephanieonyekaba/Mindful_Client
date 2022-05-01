@@ -75,11 +75,11 @@ const App = () => {
 					}/>	
 
 					{/* this is our HOME INDEX page route */}
-					{/* <Route path='/home' element={
+					<Route path='/home' element={
 					<RequireAuth user={user}>
 						<Home msgAlert={msgAlert} user={user} />
 					</RequireAuth>
-					}/>	 */}
+					}/>	
 
 					{/* this is our YOGA SHOW page route */}
 					<Route path='/yoga_poses/:id' element={
@@ -121,7 +121,7 @@ const App = () => {
 					<Route path='/' element={
 					<SignIn msgAlert={msgAlert} setUser={setUser} />
 					}/>
-					<Route path='/home' element={<Home msgAlert={msgAlert} user={user} />} /> 
+					{/* <Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />  */}
 				
 
 					<Route path='/sign-out' element={
