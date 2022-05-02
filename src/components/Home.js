@@ -14,8 +14,8 @@ const Home = (props) => {
 	 <span>Welcome Back, [insert user here]</span>
 	 <Box> 
 	 <p id="homeText"> Welcome to Mindful! </p> <br/>
-	 <p id="homeText">This is an interactive app that allows users to find their morning groove
-	 In this app you will be able to view yoga poses to practice everyday and journal your thoughts</p>
+	 <p id="homeText">This is an interactive app that allows users to find their morning groove.
+	 In this app you will be able to practice mindfulness, yoga, and gratitude to start your day off right.</p>
 	 <Link to="/affirmations">
 	 <button type="button" class="btn btn-outline-light btn-lg">Daily Affirmation   </button>
 	 </Link>

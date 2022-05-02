@@ -3,7 +3,7 @@ import {getAllYogas} from "../../api/yoga_api"
 import {Link} from "react-router-dom"
 import { Card } from 'react-bootstrap'
 import { StyledHeader } from '../styles/Header.styled'
-
+import { YogaIndexLayout } from '../styles/YogaIndexLayout.styled'
 
 
 //This is the function that handles showing the yoga object
@@ -33,31 +33,52 @@ const IndexYogas = (props) => {
             //here we are saying if there are yoga poses in the object, map each on to a key and display it 
             if (yogas.length > 0) {
                 yogas.Jsx = yogas.map(yogas => (
-                    <Card key={yogas.id} style={{width: '50%' }} className='m-2' >
-                    <Card.Body>
-                    <Link to={`./${yogas._id}`}><img src= {yogas.img_url} height="100"  /></Link>
-                     <span> {yogas.english_name}</span>
-                    </Card.Body>
+                    <Card key={yogas.id} style={{width: '30%' }} className="m-2 text-gray">
+                    <Link to={`./${yogas._id}`} style={{ color: 'gray' }}> <img class="card-img" src={yogas.img_url} alt="Card image"></img>
+                    <div class="card-img-overlay">
+                    <p class="card-text">{yogas.english_name}</p>
+                    </div> 
+                </Link>
                 </Card>
+               
                 ))
 
             } 
+              
         
             return (
             <>           
             <div className="container"> 
            <StyledHeader>  <h1>Yoga Poses</h1> </StyledHeader>
-            {/* <ul>
-                <li className="card">{yogas.Jsx}</li>
-            </ul> */}
+{/* 
 
+        <YogaIndexLayout>  */}
+
+        <div className="row">
             {yogas.Jsx}
+      
+
         </div>
+
+
+
+
+
+
     
+</div>
+
+
+
+
+
 
             </>
         )    
-    
+        
     }
-
+    
+    {/* <ul>
+        <li className="card" > {yogas.Jsx}</li>
+    </ul> */}
     export default IndexYogas

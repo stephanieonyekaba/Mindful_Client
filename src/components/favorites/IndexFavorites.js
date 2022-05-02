@@ -18,7 +18,7 @@ const IndexFavorites = (props) => {
     useEffect(() => {
         //this is the axios call function made to our mindufl_api that
         //allows us to use the get getAllYogas function 
-        getAllFavoriteYogas()
+        getAllFavoriteYogas(props.user._id)
         //this is the promise chain that sets the state of the object returned from the axios call
         //(remember the setState function above?) or it will return an error if no object is found (.catch)
                 .then(res => {
@@ -38,7 +38,7 @@ const IndexFavorites = (props) => {
             //here we are saying if there are yoga poses in the object, map each on to a key and display it 
             if (favoriteYogas.length > 0) {
 
-				console.log("hey")
+				console.log("THESE ARE THE FAV YOGAS",favoriteYogas)
 
                 // favoriteYogas.Jsx = favoriteYogas.map(favoriteYogas => (
                 //     <Card key={favoriteYogas.id} style={{width: '50%' }} className='m-2' >
@@ -54,9 +54,9 @@ const IndexFavorites = (props) => {
             return (
             <>           
             <div className="container"> 
-
-            { favoriteYogas }
-        </div>
+                {/* { favoriteYogas } */}
+                <p>favorites go here</p>
+            </div>
     
 
             </>

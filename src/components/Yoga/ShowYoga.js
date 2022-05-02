@@ -21,7 +21,7 @@ const ShowYogas = (props) => {
         }, [id])
 
     const handleClick = () => {
-        console.log("THIS IS THE PROPS.USER", props.user)
+    
         console.log("THIS Is The id", id)
         favoriteYoga(props.user, id)
             .then(res => console.log(res))

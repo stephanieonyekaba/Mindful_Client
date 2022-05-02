@@ -13,7 +13,7 @@ export const AffirmationBox = styled.div`
     text-align: center;
     font-size: 30px;
     color: gray;
-    font-family: 'Cormorant';
+    font-family: 'Send+Flowers';
     text-align: center;
     align-items: center;
     background: rgba(255, 255, 255, 0) 
