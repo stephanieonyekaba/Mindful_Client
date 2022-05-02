@@ -11,9 +11,9 @@ const Home = (props) => {
 	return (
 		<>
 	<Container> 
-	 <span>Welcome Back, [insert user here]</span>
+	 <span>Welcome To Mindful</span>
 	 <Box> 
-	 <p id="homeText"> Welcome to Mindful! </p> <br/>
+	 <p id="homeText"> What is Mindful?</p> <br/>
 	 <p id="homeText">This is an interactive app that allows users to find their morning groove.
 	 In this app you will be able to practice mindfulness, yoga, and gratitude to start your day off right.</p>
 	 <Link to="/affirmations">

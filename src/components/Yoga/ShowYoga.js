@@ -47,10 +47,14 @@ const ShowYogas = (props) => {
         <>
             <Container className="m-5">
                 <h1> <p className="pic-title">{yoga.english_name}</p></h1>
-                <Image src={yoga.img_url} className="img-fluid shadow-4"/><br/>
+                <h6>  
+                {yoga.sanskrit_name} </h6> 
+                <Image src={yoga.img_url} className="img-fluid shadow-4" style={{width: '50%' }} /><br/>
                 
-                <span> Sanskirt: {yoga.sanskrit_name}</span>
-                <p>{yoga.pose_benefits}</p>
+                <h3>Benefits</h3><br></br>
+                {yoga.pose_benefits}
+                <h1></h1>
+                <br></br>
                 <Button variant="outline-primary" onClick={handleClick}>Add to Favorites</Button>{' '}
 
 
