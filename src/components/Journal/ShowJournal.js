@@ -49,7 +49,7 @@ const ShowJournal = (props) => {
                     variant: 'success',
                 })
             })
-            .then(() => {navigate(`/`)})
+            .then(() => {navigate(`/my_journal`)})
             .catch(() => {
                 msgAlert({
                     heading: 'something went wrong',
