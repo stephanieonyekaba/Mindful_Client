@@ -64,7 +64,12 @@ const IndexJournals = (props) => {
                 <Card.Body>
                     <p>{journal.entry}</p>
                     <Card.Text>
-                        <Link to={`/my_journal/${journal._id}`}>View Entry</Link>
+                    <Link to={`/my_journal/${journal._id}`}>
+                    <a href="#" button type="button" class="btn btn-outline-secondary btn-sm"> View Entry </a>
+                    </Link>
+
+
+                        
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -76,7 +81,7 @@ const IndexJournals = (props) => {
            <StyledHeader><h1>My Journal Entries</h1> </StyledHeader> 
 
         <Link to="/add_journal">
-	    <button type="button" class="btn btn-secondary">Add Entry </button>
+	    <button type="button" class="btn btn-outline-primary">Add Entry </button>
 	    </Link>
 
           
@@ -87,4 +92,8 @@ const IndexJournals = (props) => {
     )
 }
 
+
 export default IndexJournals
+
+
+
