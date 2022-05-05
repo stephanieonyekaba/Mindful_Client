@@ -2,25 +2,28 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
+import { Brand } from '../styles/Brand.styled'
+
 const linkStyle = {
-	font: "Gelasio",
     color: '#c4bda9',
-    textDecoration: 'italics',
-	margin: '30px'
-	
+	font: "Gelasio",
+    textDecoration: 'none',
+	margin: '30px',
 	
 }
 
 const brandStyle = {
-	font: "Gelasio",
-    color: '#595751',
+	font: "Plaster",
+    color: 'gray',
 	
 }
 const authenticatedOptions = (
 	<>
 		<Nav.Item>
 			<Link to='/home' style={linkStyle}>
+		
                 Home  
+
             </Link>
 			<Link to='/my_journal' style={linkStyle}>
                 Journal  
@@ -79,11 +82,11 @@ const Header = ({ user }) => (
 	
 	<Navbar bg='Light' variant='Light' expand='md'>
 
-	<Navbar.Brand style={brandStyle}>
+	<Brand><Navbar.Brand style={brandStyle}>
 
       Mindful
       </Navbar.Brand>
-
+	  </Brand>
 
 
 
