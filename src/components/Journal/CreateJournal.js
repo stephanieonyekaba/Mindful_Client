@@ -109,7 +109,7 @@ const CreateJournal = (props) => {
             // if there is an error, we'll send an error message
             .catch(() =>
                 msgAlert({
-                    heading: 'Error',
+                    heading: 'All Fields Required',
                     message: createJournalFailure,
                     variant: 'danger',
                 }))
@@ -128,15 +128,7 @@ const CreateJournal = (props) => {
 
 
             <Container className="justify-content-center">
-            <h3>CREATE A NEW JOURNAL</h3>
-            <Form onSubmit={handleSubmit}>
-                <Form.Label>Entry</Form.Label>
-                <Form.Control 
-                    placeholder="My journal entry"
-                    value={journal.entry}
-                    name='entry'
-                    onChange={handleChange}
-                    />
+            <h3>CREATE A NEW ENTRY</h3>
                 <Form.Label>Date</Form.Label>
                 <Form.Control 
                     placeholder="MM/DD/YYYY"
@@ -145,6 +137,14 @@ const CreateJournal = (props) => {
                     type="date"
                     onChange={handleChange}
                 />
+            <Form onSubmit={handleSubmit}>
+                <Form.Label>Entry</Form.Label>
+                <Form.Control as="textarea" rows={3}
+                    placeholder="My journal entry"
+                    value={journal.entry}
+                    name='entry'
+                    onChange={handleChange}
+                    />
                 
                 
                 <Button type='submit'>Submit</Button>

@@ -56,10 +56,11 @@ const EditJournalModal = (props) => {
 
         
             <Container className="justify-content-center">
-            <h3>Edit this journal post</h3>
+            <h3>Edit This Post</h3>
             <Form onSubmit={handleSubmit}>
                 <Form.Label>Entry</Form.Label>
-                <Form.Control 
+  
+                <Form.Control as="textarea" rows={3}
                     placeholder="My journal entry"
                     value={journal.entry}
                     name='entry'

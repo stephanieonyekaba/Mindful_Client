@@ -27,11 +27,11 @@ const IndexJournals = (props) => {
                 setJournals(res.data.journals)
             })
             .then(() => {
-                msgAlert({
-                    heading: 'Found some journals!',
-                    message: indexJournalsSuccess,
-                    variant: 'success',
-                })
+                // msgAlert({
+                //     heading: 'Found some journals!',
+                //     message: indexJournalsSuccess,
+                //     variant: 'success',
+                // })
             })
             .catch(() => {
                 msgAlert({

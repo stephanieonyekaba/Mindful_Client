@@ -81,7 +81,7 @@ const ShowJournal = (props) => {
                     <Card.Header><Moment format="MM/DD/YYYY">{journal.date}</Moment></Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <small>Entry: {journal.entry}</small><br/>
+                            <small> {journal.entry}</small><br/>
 
                         </Card.Text>
                     </Card.Body>
