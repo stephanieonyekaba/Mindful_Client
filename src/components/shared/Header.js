@@ -77,7 +77,7 @@ const Header = ({ user }) => (
 
 
 	
-	<Navbar bg='light' variant='light' expand='md'>
+	<Navbar bg='Light' variant='Light' expand='md'>
 
 	<Navbar.Brand style={brandStyle}>
 

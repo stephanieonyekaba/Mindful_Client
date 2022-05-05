@@ -4,6 +4,9 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Spinner, Container, Card, Button } from 'react-bootstrap'
 import {showJournalSuccess, showJournalFailure} from '../shared/AutoDismissAlert/messages'
 import EditJournalModal from './EditJournalModal'
+import Moment from 'react-moment';
+import 'moment-timezone';
+
 
 
 const cardContainerLayout = {
@@ -75,7 +78,7 @@ const ShowJournal = (props) => {
         <>
             <Container className="fluid">
                 <Card>
-                    <Card.Header>{journal.date}</Card.Header>
+                    <Card.Header><Moment format="MM/DD/YYYY">{journal.date}</Moment></Card.Header>
                     <Card.Body>
                         <Card.Text>
                             <small>Entry: {journal.entry}</small><br/>
