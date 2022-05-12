@@ -28,11 +28,11 @@ const ShowJournal = (props) => {
         getOneJournal(id)
             .then(res => setJournal(res.data.journal))
             .then(() => {
-                msgAlert({
-                    heading: 'Here is the journal entry!',
-                    message: showJournalSuccess,
-                    variant: 'success',
-                })
+                // msgAlert({
+                //     heading: 'Here is the journal entry!',
+                //     message: showJournalSuccess,
+                //     variant: 'success',
+                // })
             })
             .catch(() => {
                 msgAlert({

@@ -1,15 +1,14 @@
 import React, {useState, useEffect} from 'react'
-import { getOneYoga, favoriteYoga} from '../../api/yoga_api.js'
+import { getOneYoga} from '../../api/yoga_api.js'
 import { useParams } from 'react-router-dom'
 import { Image, Button, Container } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-// import {favoriteYoga} from '../../api/yoga_api.js'
+import {favoriteYogas} from '../../api/yoga_api.js'
 
 const ShowYogas = (props) => {
-    console.log('WHAT THE F IS THIS PROP', props)
+
     const navigate = useNavigate()
     const [yoga, setYoga] = useState(null)
-    // console.log('props in showYogas', props)
     const { id } = useParams()
     // console.log('id in showYogas', id)
     // empty dependency array in useEffect to act like component did mount
@@ -22,12 +21,13 @@ const ShowYogas = (props) => {
 
     const handleClick = () => {
     
-        console.log("THIS Is The id", id)
-        favoriteYoga(props.user, id)
-            .then(res => console.log(res))
-            .catch(console.log("error"))
+        // console.log("THIS Is The yoga id", id)
+        // console.log("THIS Is The PROPP", props)
+        favoriteYogas( props.user, id)
+            // .then(res => console.log(res))
+            .catch(console.log("NOTHING"))
     }
-        console.log('this is showyogas', yoga)
+
     if (!yoga) {
         return (
             <h1>Loading....</h1>

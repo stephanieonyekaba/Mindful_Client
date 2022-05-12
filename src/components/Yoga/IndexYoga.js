@@ -8,6 +8,7 @@ import { YogaIndexLayout } from '../styles/YogaIndexLayout.styled'
 
 //This is the function that handles showing the yoga object
 const IndexYogas = (props) => {
+    console.log(' PROP', props.user)
     //this sets the original state for yoga poses
     const [yogas, setYogas] = useState(null)
     useEffect(() => {

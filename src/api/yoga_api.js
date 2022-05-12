@@ -35,13 +35,15 @@ export const getOneYoga = (yogaId) => {
 }
 
 
-export const favoriteYoga = (user, yogaId) => {
-    console.log('user', user)
+
+export const favoriteYogas = (user, yogaId) => {
+    console.log('uzaa', user)
+    console.log('uzaa', yogaId)
     return axios({
         url: `${apiUrl}/yoga/favorites/${yogaId}`,
         method: 'POST',
         headers: {
-            // Authorization: `Token token=${user.token}`
+            Authorization: `Token token=${user.token}`
         },
     })
 }
