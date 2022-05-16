@@ -1,10 +1,7 @@
 {
   "name": "Mindful-Client",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "16.x"
-  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
