@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Reviews.css'
+import './Reviews.css'
 import Review from './Review'
 
 function Reviews() {

@@ -9,7 +9,8 @@ import { AffirmationBg } from '../styles/AffirmationBg.styled'
 
 const IndexAffirmations = (props) => {
     //this sets the original state for affirmations
-    const [affirmations, setAffirmations] = useState(null)
+    const [affirmations, setAffirmations] = useState(null);
+    
     useEffect(() => {
         //this is the axios call function made to our mindufl_api that
         //allows us to use the get allAffirmation function 

@@ -2,7 +2,7 @@ import Header from './shared/Header'
 import { Container } from './styles/Container.styled'
 import { Box } from './styles/Box.styled'
 import {Link} from "react-router-dom"
-import Reviews from './Reviews'
+import Reviews from './reviews/Reviews'
 
 
 const Home = (props) => {

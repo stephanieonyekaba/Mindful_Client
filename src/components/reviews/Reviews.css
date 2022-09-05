@@ -24,12 +24,42 @@
 }
 
 .review_container {
+    display: flex;
 
+    justify-content: center;
     padding-bottom: 20px;
+    padding-right: 8rem;
     width: 620px;
     height: 520px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+}
 
+.review_img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: none;
+}
+
+.review_text_container {
+    width: 100%;
+}
+
+.review_text_container {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.review_quote {
+    font-size: 15px;
+}
+
+.card{
+    border: white;
 }
