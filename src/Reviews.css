@@ -1,0 +1,35 @@
+
+.reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #d5f9de;
+    padding-bottom: 50px;
+
+}
+
+.reviews > h1 {
+    color: black;    
+    border-bottom-width: 3px;
+    padding-bottom: 5px;
+
+}
+
+.reviews_line {
+
+    background-color: rgba(0, 0, 0, 0.258);
+    width: 200px;
+    height: 5px;
+}
+
+.review_container {
+
+    padding-bottom: 20px;
+    width: 620px;
+    height: 520px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
