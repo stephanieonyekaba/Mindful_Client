@@ -14,11 +14,20 @@ h1 {
 }
 
 #homeText {
+ padding: 30px;
+  font-family: "Raleway";
+  font-weight: 10;
+  color: rgb(81, 81, 81);
+  font-size: 20px;
+  
+}
+
+.about_section > bold{
  
   font-family: "Raleway";
   font-weight: 10;
-  color: white;
-  font-size: 20px;
+  color: rgb(81, 81, 81);
+  font-size: 40px;
 }
 
 

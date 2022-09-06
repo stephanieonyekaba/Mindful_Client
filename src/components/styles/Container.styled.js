@@ -10,7 +10,7 @@ export const Container = styled.div`
     /* background-repeat: no-repeat; */
     background-size: cover; 
     background-color: gray;
-    background-image: url("https://i.ibb.co/sRkmwMk/pexels-photo-8266188.jpg ");
+    background-image: url("https://i.ibb.co/3SGxVcf/ralph-ravi-kayden-3jzt-Lh-BPr-Uo-unsplash.jpg");
     text-align: center;
     image-rendering: -webkit-optimize-contrast;
     font-size: 75px;
@@ -19,7 +19,6 @@ export const Container = styled.div`
     font-weight: 300;
    
 `
-
 
 
 

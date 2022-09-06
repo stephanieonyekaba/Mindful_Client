@@ -1,15 +1,19 @@
 import React, {useState, useEffect, useRef } from 'react'
 import {getAllAffirmations} from "../../api/affirmations_api"
-import {Link} from "react-router-dom"
 import { Container, Card } from 'react-bootstrap'
-//This is the function that handles showing the afffirmation object
-import { StyledHeader } from '../styles/Header.styled'
-import { AffirmationBox } from '../styles/AffirmationBox.styled'
-import { AffirmationBg } from '../styles/AffirmationBg.styled'
+
+
+
+
+
+
 
 const IndexAffirmations = (props) => {
     //this sets the original state for affirmations
-    const [affirmations, setAffirmations] = useState(null);
+    const [affirmations, setAffirmations] = useState(0);
+    const [index, setIndex] = useState(0); 
+    
+    
     
     useEffect(() => {
         //this is the axios call function made to our mindufl_api that
@@ -33,34 +37,49 @@ const IndexAffirmations = (props) => {
             }
             //here we are saying if there are affirmations in the object, map each on to a key and display it 
 
-            const randomNumber = Math.floor((Math.random() * 10) + 1)
+  
+
+
+
             if (affirmations.length > 0) {
                 affirmations.Jsx = affirmations.map(affirmations => (
-                    <Card key={affirmations.id} style={{width: '100%' }} className='m-2'>
-                    <Card.Body>
+                    <div className='mantra'>
+                  
                      {affirmations.mantra} 
-                    
-                    </Card.Body>
-                </Card>
+                
+                     </div>
                 ))
                 console.log('this is the AFF returned n ', affirmations.Jsx)
 
             } 
+
+
+            const checkNum = (num) => {
+                if (num > affirmations.length - 1) {
+                  return 0;
+                }
+                else if (num < 0) {
+                  return affirmations.length - 1;
+                }
+                return num;
+              };
+
+            const randomAffirmation = () => {
+                    let randomNum = Math.floor((Math.random() * affirmations.length) + 1);
+                    if (randomNum === index) {
+                        randomNum = index + 1;
+                    }
+                    setIndex(checkNum(randomNum));
+                }
+
+            
         
             return (
             <>
-            <AffirmationBg> 
-            <div className="container"> 
-                   <StyledHeader><h1>Affirmation of The Day</h1></StyledHeader>
 
-            <AffirmationBox> 
                     
-                    {affirmations.Jsx [randomNumber]}
-                
-                </AffirmationBox>
-                </div>
-
-                </AffirmationBg>
+                    {affirmations.Jsx [index]}
+                    <button type="button" class="btn btn-outline-dark btn-lg" onClick={randomAffirmation}>Random   </button>
             </>
         )    
     

@@ -4,13 +4,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #d5f9de;
+    background-color: #8AA399;
     padding-bottom: 50px;
 
 }
 
 .reviews > h1 {
-    color: black;    
+    padding-top: 60px;
+    color: white;   
+    font-family: 'Lato', Arial, Helvetica, sans-serif; 
     border-bottom-width: 3px;
     padding-bottom: 5px;
 

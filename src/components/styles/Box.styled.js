@@ -15,7 +15,8 @@ export const Box = styled.div`
     font-family: 'Raleway', sans-serif;
     text-align: center;
     font-weight: 300;
-    background: rgba(255, 255, 255, .3) 
+    background: rgba(255, 255, 255, .7) 
+    
 
    
 `

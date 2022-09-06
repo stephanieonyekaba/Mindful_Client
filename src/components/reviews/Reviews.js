@@ -7,7 +7,7 @@ function Reviews() {
     <div className='reviews'>
 
 
-        <h1>Our Reviews</h1>
+        <h1> Reviews</h1>
         <div className='reviews_line'></div>
         <br></br>
          <div className='review_container'>

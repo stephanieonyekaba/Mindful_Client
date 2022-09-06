@@ -56,6 +56,7 @@ const SignIn = (props) => {
 
     return (
         <> 
+<div className='signin'> 
 <div className='signin_wrapper'> 
     <div class='row'>
         <div class='column'>
@@ -111,6 +112,7 @@ const SignIn = (props) => {
 
     </div>
 </div> 
+</div>
 
  
         </>
