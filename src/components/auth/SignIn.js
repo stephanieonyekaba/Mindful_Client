@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
 import { signIn } from '../../api/auth'
 import messages from '../shared/AutoDismissAlert/messages'
-
-import { Container } from '../styles/Container.styled'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import './Signin.css'
 
 
 const SignIn = (props) => {
@@ -58,14 +56,28 @@ const SignIn = (props) => {
 
     return (
         <> 
-        <Container> 
-        <div className='row'>
-            <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+<div className='signin_wrapper'> 
+    <div class='row'>
+        <div class='column'>
+            <div className='signin_image'>
+            <span className='signin_slogan'>
+                <h1>Mindful</h1>
+                <p>Breath in.. Breath out</p>
+            </span>
+                
+                <img src="https://i.ibb.co/W22BsYP/Screen-Shot-2022-09-05-at-9-40-55-PM.png"></img>
+            </div>
+        </div>
+
+        {/* //THIS HOLDS LOGIN INFO // */}
+    <div class='column'>
+        <div className='signin_container'>
+            <div className='col-lg-10 col-md-20 mx-auto mt-5'>
                 <h1>Sign In</h1>
                 <Form onSubmit={onSignIn}>
                     <Form.Group controlId='email'>
-                        <Form.Label></Form.Label>
-                        <Form.Control
+                      
+                    <Form.Control
                             required
                             type='email'
                             name='email'
@@ -75,7 +87,6 @@ const SignIn = (props) => {
                         />
                     </Form.Group>
                     <Form.Group controlId='password'>
-                        <Form.Label></Form.Label>
                         <Form.Control
                             required
                             name='password'
@@ -85,15 +96,28 @@ const SignIn = (props) => {
                             onChange={e => setPassword(e.target.value)}
                         />
                     </Form.Group>
-                    <Button variant='light' type='submit'>
+                    <br></br>
+                <div className='signin_button_container'>
+                    <Button variant='dark' type='submit'>
                         Submit
                     </Button>
+
+                </div>
                 </Form>
             </div>
         </div>
-        </Container> 
+        </div>
+
+
+    </div>
+</div> 
+
+ 
         </>
     )
 }
 
 export default SignIn
+
+
+

@@ -12,7 +12,7 @@ export const Box = styled.div`
     background-color: gray;
     text-align: center;
     font-size: 30px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Raleway', sans-serif;
     text-align: center;
     font-weight: 300;
     background: rgba(255, 255, 255, .3) 

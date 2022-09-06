@@ -1,13 +1,39 @@
 import React from 'react'
 import { useState, useEffect, setState } from 'react'
-import { GoChevronLeft, GoChevronRight, ImQuotesLeft } from 'react-icons'
+import { GoChevronLeft, GoChevronRight, ImQuotesLeft } from 'react-icons/go'
 import {getAllReviews} from "../../api/reviews_api"
 import { Card } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button';
+
 
 function Review() {
 const [reviews, setReviews] = useState(null);
-// const [index, setIndex] = useState(0); 
+const [index, setIndex] = useState(0); 
 // const {name, quote} = reviews[index]
+
+const checkNum = (num) => {
+  if (num > reviews.length - 1) {
+    return 0;
+  }
+  else if (num < 0) {
+    return reviews.length - 1;
+  }
+  return num;
+};
+
+const nextPerson = () => {
+  setIndex((index) => {
+    let newIndex = index + 1;
+    return checkNum(newIndex);
+  })
+}
+
+const prevPerson = () => {
+  setIndex((index) => {
+    let newIndex = index - 1;
+    return checkNum(newIndex);
+  })
+}
 
 useEffect(() => {
   getAllReviews()
@@ -31,7 +57,8 @@ if (reviews.length > 0) {
       <div class="body" className='review_text_container' >
       <img className="review_img" src={reviews.img_url} alt="Card image"></img>
           <h1 className='review_name'>{reviews.name}</h1>
-          <p class="review_quote">{reviews.quote}</p>
+          <p class="review_quote"> <bold> " </bold> {reviews.quote} <bold> " </bold> </p>
+          
       </div>
 
 
@@ -42,35 +69,31 @@ if (reviews.length > 0) {
 } 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div className='review'>
-        <div className='review_img'>
-      {reviews.Jsx[0]}
-        </div>
+      <div className='review_img'>
+      {reviews.Jsx[index]}
+      <div className='button-container' >
+        <button className='prev-btn' onClick={prevPerson}>
+          <GoChevronLeft />
+        </button>
+        <button className='next-btn'onClick={nextPerson} >
+          <GoChevronRight />
+        </button>
+
+      </div>
+
+    
+
+
+
+
+
+
+
+
+
+    </div>
     </div>
   )
 }
