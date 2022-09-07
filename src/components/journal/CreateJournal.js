@@ -127,9 +127,18 @@ const CreateJournal = (props) => {
 
 
 
-            <Container className="justify-content-center">
-            <h3>CREATE A NEW ENTRY</h3>
-                <Form.Label>Date</Form.Label>
+<div className="newjournal">
+        <div className='newjournal_wraper'> 
+            <h3>New Entry</h3>
+        <div className='newjournal_container'> 
+        <Form.Label>Title</Form.Label>
+        <Form.Control as="textarea" rows={1}
+                    placeholder="Title"
+                    value={journal.title}
+                    name='title'
+                    onChange={handleChange}
+                    />
+        <Form.Label>Date</Form.Label>
                 <Form.Control 
                     placeholder="MM/DD/YYYY"
                     value={journal.date}
@@ -146,12 +155,13 @@ const CreateJournal = (props) => {
                     onChange={handleChange}
                     />
                 
-                
-                <Button type='submit'>Submit</Button>
+        <div className='createjournal_button'> 
+                <button type="submit" class="btn btn-outline-secondary">Submit</button>
+            </div>
             </Form>
-        </Container>
-
-
+        </div>
+        </div>
+    </div>
 
 
 

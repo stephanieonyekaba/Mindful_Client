@@ -7,6 +7,7 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import Accordion from 'react-bootstrap/Accordion';
 import { MdOutlineOpenInNew }  from 'react-icons/md'
+import { IconContext } from "react-icons";
 import './journal.css'
 
 // I'm going to declare a style object
@@ -63,12 +64,22 @@ const IndexJournals = (props) => {
             // we can use inline, just like in html
             <Accordion key={journal.id} style={{ width: '100%' }}  defaultActiveKey="0" flush>
             <Accordion.Item eventKey="0">
-              <Accordion.Header><Moment format="MM/DD/YYYY">{journal.date}</Moment></Accordion.Header>
+
+              <Accordion.Header> 
+        <div className='accordion_header_container'>
+                    <p className='journal_header'> {journal.title} </p>
+             <small>
+                <Moment format="MM/DD/YYYY">
+                  {journal.date} 
+                </Moment>
+             </small> 
+        </div>
+                </Accordion.Header>
               <Accordion.Body>
                   <p>{journal.entry}</p>
               <p>
                   <Link to={`/my_journal/${journal._id}`}>
-                          <a href="#" button type="button" class="btn btn-outline-secondary btn-sm"> View Entry </a>
+                          <a href="#" button type="button" class="btn btn-outline-secondary btn-sm"> View  </a>
                           </Link>
               </p>
               </Accordion.Body>
@@ -89,9 +100,14 @@ const IndexJournals = (props) => {
 <div className='journal_title'>
         <h1>Journal Entries</h1>
         <div className='new_journal'>
-        <Link to="/add_journal">
+        <Link to="/add_journal"> 
+    <IconContext.Provider value={{ color: 'white', size: '50px' }}>
+        <div>
             <MdOutlineOpenInNew />
-        </Link>
+
+        </div>
+    </IconContext.Provider>
+    </Link> 
 </div>
 </div>
 
