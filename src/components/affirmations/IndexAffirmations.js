@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useRef } from 'react'
 import {getAllAffirmations} from "../../api/affirmations_api"
 import { Container, Card } from 'react-bootstrap'
-
-
+import './affirmations.css'
+import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
 
 
 
@@ -77,9 +77,20 @@ const IndexAffirmations = (props) => {
             return (
             <>
 
-                    
-                    {affirmations.Jsx [index]}
-                    <button type="button" class="btn btn-outline-dark btn-lg" onClick={randomAffirmation}>Random   </button>
+            <p id="affirmationsText">
+            <div className='quote_left'>
+                <ImQuotesLeft />
+            </div>
+                {affirmations.Jsx [index]}
+            <div className='quote_right'>
+                <ImQuotesRight />
+            </div>
+                </p>
+
+            <div className='affirmations'>
+                <button type="button" class="btn btn-outline-dark btn-lg" onClick={randomAffirmation}>Random</button>
+            </div>
+
             </>
         )    
     

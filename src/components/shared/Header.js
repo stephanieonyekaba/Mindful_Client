@@ -34,9 +34,6 @@ const authenticatedOptions = (
                 Yoga  
             </Link>
 
-			<Link to='/affirmations' style={linkStyle}>
-                Daily Affirmation  
-            </Link>
 
 			<Link to='/my_favorites' style={linkStyle}>
                 Favorites  

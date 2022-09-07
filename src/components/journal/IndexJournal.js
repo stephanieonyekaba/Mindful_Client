@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom'
 import {indexJournalsSuccess, indexJournalsFailure} from '../shared/AutoDismissAlert/messages'
 import Moment from 'react-moment';
 import 'moment-timezone';
-import { StyledHeader } from '../styles/Header.styled'
+import Accordion from 'react-bootstrap/Accordion';
+import { MdOutlineOpenInNew }  from 'react-icons/md'
+import './journal.css'
 
 // I'm going to declare a style object
 // this will be used to corral my cards
@@ -59,36 +61,50 @@ const IndexJournals = (props) => {
         journalCards = journals.map(journal => (
             // one method of styling, usually reserved for a single style
             // we can use inline, just like in html
-            <Card key={journal.id} style={{ width: '30%' }} className="m-2">
-                <Card.Header><Moment format="MM/DD/YYYY">{journal.date}</Moment></Card.Header>
-                <Card.Body>
-                    <p>{journal.entry}</p>
-                    <Card.Text>
-                    <Link to={`/my_journal/${journal._id}`}>
-                    <a href="#" button type="button" class="btn btn-outline-secondary btn-sm"> View Entry </a>
-                    </Link>
-
-
-                        
-                    </Card.Text>
-                </Card.Body>
-            </Card>
+            <Accordion key={journal.id} style={{ width: '100%' }}  defaultActiveKey="0" flush>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header><Moment format="MM/DD/YYYY">{journal.date}</Moment></Accordion.Header>
+              <Accordion.Body>
+                  <p>{journal.entry}</p>
+              <p>
+                  <Link to={`/my_journal/${journal._id}`}>
+                          <a href="#" button type="button" class="btn btn-outline-secondary btn-sm"> View Entry </a>
+                          </Link>
+              </p>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         ))
+
+
+
+
+
     }
 
     return (
         <>
-           <StyledHeader><h1>My Journal Entries</h1> </StyledHeader> 
-
+<body> 
+    <div className='journal'>
+<div className='journal_title'>
+        <h1>Journal Entries</h1>
+        <div className='new_journal'>
         <Link to="/add_journal">
-	    <button type="button" class="btn btn-outline-primary">Add Entry </button>
-	    </Link>
+            <MdOutlineOpenInNew />
+        </Link>
+</div>
+</div>
 
-          
-            <div style={cardContainerLayout}>
-                {journalCards}
-            </div>
-        </>
+<div className='entry_container'>
+
+    <div className='journal_entries'>
+            {journalCards}
+    </div>
+
+</div>
+</div>
+</body>
+</>
     )
 }
 

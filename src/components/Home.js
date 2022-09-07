@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 import Reviews from './reviews/Reviews'
 import IndexAffirmations from './affirmations/IndexAffirmations'
 import '../Home.css'
-import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
+
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
@@ -26,15 +26,7 @@ const Home = (props) => {
 <div className='about_section'>
 <bold>Daily Affirmation:</bold>
 
-	 <p id="homeText">
-<div className='quote_left'>
-	 <ImQuotesLeft />
-</div>
-	 <IndexAffirmations/ >
-<div className='quote_right'>
-	 <ImQuotesRight />
-</div>
-	 </p>
+<IndexAffirmations />
 	
 {/* //PUT BUTTO HERE */}
 
