@@ -6,7 +6,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-
+import './changepassword.css'
 const ChangePassword = (props) => {
 	// constructor(props) {
 	// 	super(props)
@@ -53,6 +53,7 @@ const ChangePassword = (props) => {
 
 
     return (
+    <div className='changepw'> 
         <div className='row'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
                 <h3>Change Password</h3>
@@ -85,6 +86,7 @@ const ChangePassword = (props) => {
                 </Form>
             </div>
         </div>
+    </div>
     )
 }
 

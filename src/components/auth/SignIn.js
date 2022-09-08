@@ -36,11 +36,7 @@ const SignIn = (props) => {
 		signIn(credentials)
 			.then((res) => setUser(res.data.user))
 			.then(() =>
-				msgAlert({
-					heading: 'Sign In Success',
-					message: messages.signInSuccess,
-					variant: 'success',
-				})
+				console.log("signed in")
 			)
 			.then(() => navigate('/home'))
 			.catch((error) => {

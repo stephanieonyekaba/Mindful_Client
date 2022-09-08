@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-
+import './signout.css'
 import {Button, ButtonGroup} from 'react-bootstrap'
 
 import { signOut } from '../../api/auth'
@@ -25,13 +25,14 @@ const SignOut = (props) => {
     }
 
     const onCancel = () => {
-        navigate('/')
+        navigate('/home')
     }
 
 	return (
 		<>
+        <div className='signout'> 
             <div className='row'>
-                <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+                <div className='signout_container'>
                     <h2>Are you sure you want to sign out?</h2>
                     <small>We hate to see you go...</small><br/>
                     <ButtonGroup>
@@ -44,6 +45,7 @@ const SignOut = (props) => {
                     </ButtonGroup>
                 </div>
             </div>
+         </div>
 		</>
 	)
 }
