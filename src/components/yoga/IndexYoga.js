@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef } from 'react'
 import {getAllYogas} from "../../api/yoga_api"
+
 import './yoga.css'
 import { BsSearch } from 'react-icons/bs'
 import { Link } from 'react-router-dom'

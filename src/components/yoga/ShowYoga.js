@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { Image, Button, Container } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import {favoriteYogas} from '../../api/yoga_api.js'
-
+import './showyoga.css'
 const ShowYogas = (props) => {
 
     const navigate = useNavigate()
@@ -45,21 +45,24 @@ const ShowYogas = (props) => {
     return (
 
         <>
-            <Container className="m-5">
+            <div className="showyoga">
                 <h1> <p className="pic-title">{yoga.english_name}</p></h1>
                 <h6>  
                 {yoga.sanskrit_name} </h6> 
-                <Image src={yoga.img_url} className="img-fluid shadow-4" style={{width: '50%' }} /><br/>
+        <div className='showyoga_wrapper'> 
+                <Image src={yoga.img_url} className="img-fluid shadow-4" style={{width: '40%' }} /><br/>
                 
-                <h3>Benefits</h3><br></br>
+            <div className='benefits_container'>
+                <h3>Benefits</h3>
                 {yoga.pose_benefits}
                 <h1></h1>
                 <br></br>
-                <Button variant="outline-primary" onClick={handleClick}>Add to Favorites</Button>{' '}
-
+                <Button variant="outline-dark" onClick={handleClick}>Add to Favorites</Button>{' '}
+            </div>
+         </div>
 
                
-            </Container>
+            </div>
 
         
         </>
