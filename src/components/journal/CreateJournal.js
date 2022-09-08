@@ -138,6 +138,7 @@ const CreateJournal = (props) => {
                     name='title'
                     onChange={handleChange}
                     />
+                    <br></br>
         <Form.Label>Date</Form.Label>
                 <Form.Control 
                     placeholder="MM/DD/YYYY"
@@ -146,6 +147,7 @@ const CreateJournal = (props) => {
                     type="date"
                     onChange={handleChange}
                 />
+            <br></br>
             <Form onSubmit={handleSubmit}>
                 <Form.Label>Entry</Form.Label>
                 <Form.Control as="textarea" rows={3}

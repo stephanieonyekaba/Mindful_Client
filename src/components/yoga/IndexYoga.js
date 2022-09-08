@@ -1,16 +1,17 @@
 import React, {useState, useEffect, useRef } from 'react'
 import {getAllYogas} from "../../api/yoga_api"
 import {Link} from "react-router-dom"
-import { Card } from 'react-bootstrap'
-import { StyledHeader } from '../styles/Header.styled'
-import { YogaIndexLayout } from '../styles/YogaIndexLayout.styled'
-
+import './yoga.css'
 
 //This is the function that handles showing the yoga object
 const IndexYogas = (props) => {
-    console.log(' PROP', props.user)
     //this sets the original state for yoga poses
     const [yogas, setYogas] = useState(null)
+    const [searchPose, setSearchPose] = useState('')
+
+
+
+
     useEffect(() => {
         //this is the axios call function made to our mindufl_api that
         //allows us to use the get getAllYogas function 
@@ -32,54 +33,54 @@ const IndexYogas = (props) => {
                 return <p>No Yoga Poses to Display </p>
             }
             //here we are saying if there are yoga poses in the object, map each on to a key and display it 
-            if (yogas.length > 0) {
-                yogas.Jsx = yogas.map(yogas => (
-                    <Card key={yogas.id} style={{width: '30%' }} className="m-2 text-gray">
-                    <Link to={`./${yogas._id}`} style={{ color: 'gray' }}> <img class="card-img" src={yogas.img_url} alt="Card image"></img>
-                    <div class="card-img-overlay">
-                    <p class="card-text">{yogas.english_name}</p>
-                    </div> 
-                </Link>
-                </Card>
-               
-                ))
+            // if (yogas.length > 0) {
 
-            } 
+                let yogaCard = yogas.filter((yoga) => {
+                        if (searchPose === "") {
+                            return yoga
+                        }
+                        else if (
+                            yoga.english_name.toLowerCase().includes(searchPose.toLocaleLowerCase())) {
+                                return yoga
+                            }
+                    }).map((yoga) => (
+                   <div key={yoga.id} style={{width: '20%' }} className="card"  
+                    >
+                    <img className='yogaphoto' src={yoga.img_url}/>
+                    <div className="card-body">
+                      <h2>{yoga.english_name}</h2>
+
+                    </div>
+                  </div>
+                    ))
+            
+                
+
               
         
-            return (
+    return (
             <>           
-            <div className="container"> 
-           <StyledHeader>  <h1>Yoga Poses</h1> </StyledHeader>
-{/* 
+<div className="yoga"> 
+    <div className='yogasearch'>
+           <h1>Yoga Poses</h1> 
+           <input type="text" class="input" placeholder="Search by pose" onChange={event => {setSearchPose(event.target.value)}}/>
 
-        <YogaIndexLayout>  */}
+    </div>
 
         <div className="row">
-            {yogas.Jsx}
-      
-
+             {yogaCard}
         </div>
-
-
-
 
 
 
     
 </div>
 
-
-
-
-
-
             </>
         )    
-        
+
     }
+        
     
-    {/* <ul>
-        <li className="card" > {yogas.Jsx}</li>
-    </ul> */}
+
     export default IndexYogas

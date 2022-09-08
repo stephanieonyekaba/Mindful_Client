@@ -6,6 +6,7 @@ import {showJournalSuccess, showJournalFailure} from '../shared/AutoDismissAlert
 import EditJournalModal from './EditJournalModal'
 import Moment from 'react-moment';
 import 'moment-timezone';
+import './showjournal.css'
 
 
 
@@ -75,15 +76,21 @@ const ShowJournal = (props) => {
 
     return (
         <>
-            <Container className="fluid">
+<div className='editjournal'> 
                 <Card>
-                    <Card.Header><Moment format="MM/DD/YYYY">{journal.date}</Moment></Card.Header>
+                    <Card.Header>
+
+            <div className="showjournal_container">
+                         {journal.title} 
+                           <small> <Moment format="MM/DD/YYYY">{journal.date}</Moment></small> 
+            </div>  
+                         </Card.Header>
                     <Card.Body>
                         <Card.Text>
                             <small> {journal.entry}</small><br/>
-
                         </Card.Text>
                     </Card.Body>
+
                     <Card.Footer>
                        
                         <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
@@ -95,7 +102,7 @@ const ShowJournal = (props) => {
 
                     </Card.Footer>
                 </Card>
-            </Container>
+  
             <Container style={cardContainerLayout}>
 
             </Container>
@@ -107,7 +114,7 @@ const ShowJournal = (props) => {
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 handleClose={() => setModalOpen(false)}
             />
-
+</div>
         </>
     )
 }
