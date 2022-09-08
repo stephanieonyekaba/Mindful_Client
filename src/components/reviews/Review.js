@@ -53,9 +53,9 @@ else if (reviews.length === 0) {
 }
 if (reviews.length > 0) {
   reviews.Jsx = reviews.map(reviews => (
-<div class="card border-0">
+<div>
       <div class="body" className='review_text_container' >
-      <img className="review_img" src={reviews.img_url} alt="Card image"></img>
+      <img className="review_img" src={reviews.img_url} ></img>
           <h1 className='review_name'>{reviews.name}</h1>
           <p class="review_quote"> <bold> " </bold> {reviews.quote} <bold> " </bold> </p>
           
