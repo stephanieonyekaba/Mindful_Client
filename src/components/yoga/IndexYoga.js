@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useRef } from 'react'
 import {getAllYogas} from "../../api/yoga_api"
-import {Link} from "react-router-dom"
 import './yoga.css'
-
+import { BsSearch } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 //This is the function that handles showing the yoga object
 const IndexYogas = (props) => {
     //this sets the original state for yoga poses
@@ -32,21 +32,22 @@ const IndexYogas = (props) => {
             else if (yogas.length == 0 ) {
                 return <p>No Yoga Poses to Display </p>
             }
-            //here we are saying if there are yoga poses in the object, map each on to a key and display it 
-            // if (yogas.length > 0) {
 
                 let yogaCard = yogas.filter((yoga) => {
                         if (searchPose === "") {
-                            return yoga
+                            return <p>Nothing Found</p>
                         }
                         else if (
                             yoga.english_name.toLowerCase().includes(searchPose.toLocaleLowerCase())) {
                                 return yoga
                             }
+
                     }).map((yoga) => (
                    <div key={yoga.id} style={{width: '20%' }} className="card"  
                     >
+                <Link to={`./${yoga._id}`}> 
                     <img className='yogaphoto' src={yoga.img_url}/>
+                </Link>
                     <div className="card-body">
                       <h2>{yoga.english_name}</h2>
 
@@ -63,8 +64,13 @@ const IndexYogas = (props) => {
 <div className="yoga"> 
     <div className='yogasearch'>
            <h1>Yoga Poses</h1> 
-           <input type="text" class="input" placeholder="Search by pose" onChange={event => {setSearchPose(event.target.value)}}/>
-
+    <div className='input_container'>
+          
+           <input type="text" class="input"  placeholder="Search by pose" onChange={event => {setSearchPose(event.target.value)}}/>
+        <div className='search_icon'>
+            <BsSearch />
+        </div>
+    </div>
     </div>
 
         <div className="row">
