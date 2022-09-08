@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: 'https://mindfulyoga1.herokuapp.com',
+	production: 'https://mindfullyyoga.herokuapp.com',
 	development: 'http://localhost:8000',
 }
 
