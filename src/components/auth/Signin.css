@@ -1,12 +1,11 @@
 .signin{
     background-color: white;
     font-family: Raleway, Arial, Helvetica, sans-serif;
-
 }
 
 
 .signin_wrapper{
-    margin: 15px;
+  height: 30%;
 
   }
   
@@ -20,18 +19,17 @@
   .column {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
     flex: 1;
   }
   
   .signin_image{
     padding-top: 100px;
-    height: 70%;
+    height: 50%;
 
   }
 
   .signin_image > span{
-    padding-bottom: 100px;
+    padding-bottom: 30px;
 
   }
 
@@ -44,7 +42,7 @@
 .signin_slogan > p{
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   padding-left: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   font-size: 20px;
   color: #7D84B2;
 }
@@ -52,8 +50,10 @@
   .signin_container {
     display: flex;
     justify-content: center;
-    padding-top: 180px;
-    height: 90%;
+    padding-top: 0;
+    align-items: center;
+    height: 100%;
+    background-color: #7D84B2;
   }
   .signin_button_container{
     display: flex;
